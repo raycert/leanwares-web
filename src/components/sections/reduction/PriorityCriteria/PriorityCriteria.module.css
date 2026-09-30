@@ -1,0 +1,138 @@
+.section {
+  padding-block: var(--section-space);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+/* Mobile: each criterion is a stacked block. */
+.table,
+.table tbody,
+.table tr,
+.table th,
+.table td {
+  display: block;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: var(--border-rule);
+}
+
+.table thead {
+  display: none;
+}
+
+.table tbody tr {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: var(--space-8) 0;
+  padding-block: 20px;
+  border-bottom: var(--border-hairline);
+}
+
+.table tbody td:last-child {
+  grid-column: 2;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-accent);
+  text-align: left;
+}
+
+.criterion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-weight: inherit;
+  text-align: left;
+}
+
+.criterion > span {
+  display: block;
+}
+
+.criterion > span + span {
+  margin-top: var(--space-4);
+}
+
+.term {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  color: var(--color-text-muted);
+}
+
+.note {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-8);
+  color: var(--color-text-strong);
+}
+
+.marker {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  background-color: var(--color-marker);
+}
+
+/* ≥ 768: a real three-column table. */
+@media (min-width: 768px) {
+  .inner {
+    gap: 40px;
+  }
+
+  .table {
+    display: table;
+  }
+
+  .table thead {
+    display: table-header-group;
+  }
+
+  .table tbody {
+    display: table-row-group;
+  }
+
+  .table tr,
+  .table tbody tr {
+    display: table-row;
+  }
+
+  .table th,
+  .table td {
+    display: table-cell;
+    padding: 22px var(--space-24) 22px 0;
+    vertical-align: baseline;
+    text-align: left;
+  }
+
+  .table tbody tr {
+    border-bottom: var(--border-hairline);
+  }
+
+  .table thead th {
+    padding-block: 10px;
+    border-bottom: var(--border-rule-thin);
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+
+  .num {
+    width: 56px;
+  }
+
+  .criterion {
+    width: 40%;
+  }
+}

@@ -1,0 +1,105 @@
+/* Mobile (templates 390): breadcrumb 16px below the header, hero 28 / 40. */
+.hero {
+  padding-top: var(--space-16);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-block: 28px 40px;
+}
+
+.withImage .grid {
+  gap: 40px;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.withImage .copy {
+  gap: 22px;
+}
+
+.lead {
+  max-width: var(--measure-lead);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  padding-top: 6px;
+}
+
+/* Tablet: 7 / 5 split (no tablet board for 5a / 5t; interpolated composition). */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--space-24);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: end;
+    gap: var(--column-gap);
+    padding-block: 40px 64px;
+  }
+
+  .withImage .grid {
+    gap: var(--column-gap);
+  }
+
+  .actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-16) 28px;
+  }
+}
+
+/* Desktop (templates 1440): padding 56 / 88. */
+@media (min-width: 1280px) {
+  .grid {
+    padding-block: 56px 88px;
+  }
+
+  .titleBlock {
+    gap: var(--space-24);
+  }
+
+  .withImage .titleBlock {
+    gap: 28px;
+  }
+
+  .withImage .copy {
+    gap: 28px;
+  }
+}
+
+/* Wide layout (5e): text-only hero 28 / 32, then the 21:9 photo; 56px below from 1280. */
+.wide .grid {
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .wide .grid {
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wide .grid {
+    padding-bottom: 56px;
+  }
+}

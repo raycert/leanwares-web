@@ -1,0 +1,56 @@
+/* Mobile (5f / 5e 390): 48px apart, stacked */
+.section {
+  padding-top: 48px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-accent);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  min-width: 0;
+}
+
+/* Tablet / desktop (5f 1440): 4 / 8, 120 / 112px apart */
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--section-space);
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    align-items: start;
+    gap: var(--column-gap);
+  }
+
+  .body {
+    gap: var(--space-32);
+  }
+}
+
+/* Note under the title (5e LWStandards: mono 13 / 12). */
+.note {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  line-height: var(--text-body-leading);
+  color: var(--surface-text-muted);
+}

@@ -1,0 +1,64 @@
+/* 5i mobile: stacked; 5i 1440: 104px padding, three columns 64px apart. */
+.section {
+  margin-top: 56px;
+  padding-block: var(--space-48);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.title {
+  max-width: 800px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-top: 20px;
+  border-top: var(--border-rule);
+}
+
+.item h3 {
+  font-weight: var(--font-weight-semibold);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--surface-text-accent);
+}
+
+@media (min-width: 768px) {
+  .section {
+    margin-top: var(--section-space);
+    padding-block: var(--section-space);
+  }
+
+  .inner {
+    gap: var(--space-48);
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--column-gap);
+  }
+}
+
+/* 768–1023: the fluid column gap is too tight for three text columns. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .list {
+    column-gap: var(--space-32);
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="padding:0 96px;height:80px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #D9D6CF;background:#fff;font-family:'Public Sans',sans-serif;color:#282058">
+<img src="assets/leanwares-logo.jpg" style="height:52px;width:auto;display:block" alt="LEANWARES">
+<div style="display:flex;gap:30px;font:500 14px 'Public Sans',sans-serif"><sc-for list="{{ nav }}" as="n" hint-placeholder-count="7"><span style="{{ n.s }}">{{ n.t }}</span></sc-for></div>
+</div>
+</sc-if>
+<sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+<div style="padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #D9D6CF;background:#fff">
+<img src="assets/leanwares-logo.jpg" style="height:48px;width:auto;display:block" alt="LEANWARES">
+<div style="width:48px;height:48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:6px"><span style="width:24px;height:2px;background:#282058"></span><span style="width:24px;height:2px;background:#282058"></span><span style="width:16px;height:2px;background:#282058"></span></div>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:80},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Giải pháp&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const a = this.props.active || '';
+    const m = !!this.props.mobile;
+    return {
+      mobile: m, desktop: !m,
+      nav: ['Trang chủ', 'Giải pháp', 'Ngành', 'Dự án', 'Kiến thức', 'Về LEANWARES', 'Liên hệ'].map(t => ({ t, s: t === a ? 'color:#0C5F98;border-bottom:2px solid #1078BF;padding-bottom:6px' : (t === 'Liên hệ' ? 'border:1px solid #282058;padding:8px 16px;margin-top:-9px' : '') }))
+    };
+  }
+}
+</script>
+</body>
+</html>

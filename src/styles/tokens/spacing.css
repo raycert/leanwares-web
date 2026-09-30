@@ -1,0 +1,72 @@
+/*
+ * Spacing tokens. Source: Design System V3 Final §06 (base-8 scale, margins, gaps).
+ *
+ * Page margin, column gap and section spacing are exact at 390 / 1024 / 1440 and
+ * interpolate in between (decision D2). Columns stack below 768 (decision D4), which is
+ * why the content column gap is 0 on mobile.
+ */
+
+:root {
+  /* ---- Scale (DS V3 S4 … S144) ------------------------------------------ */
+  --space-4: 4px; /* inside labels */
+  --space-8: 8px; /* icon ↔ text; minimum gap between touch targets */
+  --space-12: 12px; /* list line gap */
+  --space-16: 16px; /* button / input padding */
+  --space-24: 24px; /* between cards */
+  --space-32: 32px; /* grid gutter */
+  --space-48: 48px; /* tablet column gap */
+  --space-64: 64px; /* large block gap */
+  --space-96: 96px; /* page margin, desktop column gap */
+  --space-128: 128px; /* desktop section spacing */
+  --space-144: 144px; /* desktop section spacing before GHG / industries */
+
+  /* ---- Layout spacing: mobile values (reference 390) --------------------- */
+  --page-margin: 20px;
+  --column-gap: 0px; /* columns are stacked */
+  --stack-gap: var(--space-32); /* vertical gap when columns stack */
+  --grid-gutter: var(--space-32);
+  --section-space: 64px;
+  --section-space-lg: 72px;
+  /* Inner padding of full-bleed coloured blocks (industries, featured project, CTA band):
+     FD v3 120 / 80 / 56 */
+  --block-space: 56px;
+}
+
+/* 390 → 1024 */
+@media (min-width: 390px) {
+  :root {
+    --page-margin: calc(20px + (56 - 20) * ((100vw - 390px) / 634));
+    --section-space: calc(64px + (96 - 64) * ((100vw - 390px) / 634));
+    --section-space-lg: calc(72px + (104 - 72) * ((100vw - 390px) / 634));
+    --block-space: calc(56px + (80 - 56) * ((100vw - 390px) / 634));
+  }
+}
+
+/* Columns sit side by side from 768 */
+@media (min-width: 768px) {
+  :root {
+    --column-gap: var(--space-48);
+  }
+}
+
+/* 1024 → 1440 */
+@media (min-width: 1024px) {
+  :root {
+    --page-margin: calc(56px + (96 - 56) * ((100vw - 1024px) / 416));
+    --column-gap: calc(48px + (96 - 48) * ((100vw - 1024px) / 416));
+    --section-space: calc(96px + (128 - 96) * ((100vw - 1024px) / 416));
+    --section-space-lg: calc(104px + (144 - 104) * ((100vw - 1024px) / 416));
+    --block-space: calc(80px + (120 - 80) * ((100vw - 1024px) / 416));
+  }
+}
+
+/* ≥ 1440: desktop reference values */
+@media (min-width: 1440px) {
+  :root {
+    --page-margin: var(--space-96);
+    --column-gap: var(--space-96);
+    --section-space: var(--space-128);
+    --section-space-lg: var(--space-144);
+    --block-space: 120px;
+  }
+}

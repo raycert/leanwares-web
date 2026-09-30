@@ -1,0 +1,64 @@
+/*
+ * Layout tokens. Source: Design System V3 Final (grid, header, touch targets) and the
+ * approved boards (content measures).
+ *
+ * Breakpoints cannot be CSS custom properties inside media queries; the canonical values
+ * are mirrored in src/lib/breakpoints.ts:
+ *   390  mobile reference
+ *   768  layout switch: columns stack below (provisional, decision D4)
+ *   1024 tablet reference
+ *   1280 desktop tier: line-height step, DS V3 H1 check
+ *   1440 desktop reference
+ */
+
+:root {
+  /* Grid */
+  --grid-columns: 12;
+  --content-max: 1248px; /* 1440 − 2 × 96. Above 1440 content stays centred (D3). */
+  --container-max: calc(var(--content-max) + 2 * var(--page-margin));
+
+  /* Text measures seen in the boards */
+  --measure-lead: 640px;
+  --measure-prose: 720px;
+
+  /* Header (DS V3 interaction notes) */
+  --header-height: 80px; /* ≥ 1280 */
+  --header-height-tablet: 72px; /* 1024–1279 (FD v3 tablet) */
+  --header-height-compact: 64px; /* after scrolling down, ≥ 1024 */
+  --header-height-mobile: 68px; /* < 1024, not sticky in V1 */
+
+  /* Logo (FD v3): header 48 → 52 at ≥ 1280, footer 56 → 72 at ≥ 1280, minimum 44 */
+  --logo-height-header: 48px;
+  --logo-height-compact: 44px;
+  --logo-height-footer: 56px;
+
+  /* Controls & touch */
+  --control-height: 48px; /* minimum input / control height */
+  --control-height-touch: 52px; /* buttons, mobile inputs */
+  --touch-target-min: 48px;
+
+  /* Markers (square, never rounded) */
+  --marker-size: 10px;
+  --marker-size-sm: 8px;
+
+  /* In-page anchor offset. The header is not sticky below 1024; from 1024 it is sticky and
+     compacts to 64px once scrolled, so anchors land 24px below the compact header. */
+  --anchor-offset: var(--space-16);
+
+  /* Stacking */
+  --z-header: 100;
+  --z-overlay: 200;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --anchor-offset: calc(var(--header-height-compact) + var(--space-24));
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --logo-height-header: 52px;
+    --logo-height-footer: 72px;
+  }
+}

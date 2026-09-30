@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ light }}" hint-placeholder-val="{{ true }}">
+<div style="width:100%;aspect-ratio:{{ ratio }};background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:16px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">{{ label }}</div>
+</sc-if>
+<sc-if value="{{ dark }}" hint-placeholder-val="{{ false }}">
+<div style="width:100%;aspect-ratio:{{ ratio }};background:repeating-linear-gradient(135deg,#3B3378 0 1px,transparent 1px 11px);background-color:#30286A;padding:16px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#B9B5DC">{{ label }}</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:480,&quot;height&quot;:360},&quot;ratio&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;4/3&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[ẢNH THẬT]&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() { const d = !!this.props.dark; return { dark: d, light: !d }; }
+}
+</script>
+</body>
+</html>

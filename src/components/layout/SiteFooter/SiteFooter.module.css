@@ -1,0 +1,210 @@
+/* Mobile first (FD v3 390): logo, 2-column group titles, stacked legal rows. */
+.footer {
+  padding-block: 44px var(--space-24);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px var(--space-24);
+}
+
+.brand {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.logoPanel {
+  display: block;
+  padding: 10px;
+  background-color: var(--color-surface);
+}
+
+.company {
+  display: none;
+  font-size: var(--text-label-size);
+}
+
+.group {
+  min-width: 0;
+}
+
+.groupTitle {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target-min);
+  color: var(--surface-text-strong);
+  font-size: var(--text-label-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-data-leading);
+  text-decoration: none;
+}
+
+.items {
+  display: none;
+}
+
+.item {
+  line-height: var(--text-ui-leading);
+  color: var(--surface-text);
+  font-size: var(--text-small-size);
+  text-decoration: none;
+}
+
+.groupTitle:hover,
+.item:hover,
+.legalLink:hover {
+  color: var(--surface-text-strong);
+  text-decoration: underline;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-24);
+}
+
+.copyright {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+}
+
+.legal {
+  display: flex;
+  flex-direction: column;
+  border-top: var(--border-width-hairline) solid var(--surface-border);
+}
+
+.legal li {
+  border-bottom: var(--border-width-hairline) solid var(--surface-border);
+}
+
+.legalLink {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target-min);
+  color: var(--surface-text);
+  font-size: var(--text-label-size);
+  text-decoration: none;
+}
+
+/* Tablet (FD v3 1024): brand + 4 group titles on one row; legal inline. */
+@media (min-width: 768px) {
+  .footer {
+    padding-block: 56px var(--space-24);
+  }
+
+  .inner {
+    gap: 36px;
+  }
+
+  .top {
+    grid-template-columns: minmax(0, 3fr) repeat(4, minmax(0, 2fr));
+    gap: 28px;
+  }
+
+  .brand {
+    grid-column: auto;
+  }
+
+  .company {
+    display: block;
+  }
+
+  .groupTitle {
+    align-items: flex-start;
+    min-height: 0;
+  }
+
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: var(--space-16);
+    border-top: var(--border-width-hairline) solid var(--surface-border);
+  }
+
+  .copyrightCompany {
+    display: none;
+  }
+
+  .legal {
+    flex-direction: row;
+    border-top: 0;
+    font-family: var(--font-mono);
+  }
+
+  .legal li {
+    border-bottom: 0;
+  }
+
+  .legal li + li::before {
+    content: "·";
+    padding-inline: 0.5em;
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+  }
+
+  .legalLink {
+    display: inline;
+    min-height: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+  }
+}
+
+/* Desktop (FD v3 1440): group titles with their items. */
+@media (min-width: 1280px) {
+  .footer {
+    padding-block: 72px var(--space-32);
+  }
+
+  .inner {
+    gap: var(--space-48);
+  }
+
+  .top {
+    grid-template-columns: minmax(0, 4fr) repeat(4, minmax(0, 2fr));
+    gap: var(--space-48);
+  }
+
+  .brand {
+    gap: var(--space-16);
+  }
+
+  .logoPanel {
+    padding: var(--space-12);
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .groupTitle {
+    font-size: var(--text-small-size);
+    line-height: var(--text-ui-leading);
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-size: var(--text-small-size);
+    line-height: var(--text-ui-leading);
+  }
+
+  .bottom {
+    padding-top: 20px;
+  }
+}

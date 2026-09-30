@@ -1,0 +1,104 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  min-height: var(--control-height-touch);
+  padding-inline: 30px;
+  border: var(--border-width-hairline) solid transparent;
+  border-radius: var(--radius-none);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-ui-leading);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+/* Sizes */
+.md {
+  font-size: var(--text-button-size);
+}
+
+/* lg: FD v3 enlarges the main CTAs on desktop only (16px / 18px × 32px);
+   tablet and mobile use the md size (15px). */
+.lg {
+  font-size: var(--text-button-size);
+}
+
+@media (min-width: 1280px) {
+  .lg {
+    font-size: var(--text-button-size-lg);
+    min-height: 56px;
+    padding-inline: var(--space-32);
+  }
+}
+
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .fullWidthMobile {
+    display: flex;
+    width: 100%;
+  }
+}
+
+/* Primary: blue → blue-700 */
+.primary {
+  background-color: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.primary:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-text-on-accent);
+}
+
+/* Secondary: outline → filled (surface-aware) */
+.secondary {
+  background-color: transparent;
+  border-color: var(--surface-outline);
+  color: var(--surface-text-strong);
+}
+
+.secondary:hover {
+  background-color: var(--surface-outline);
+  color: var(--surface-bg);
+}
+
+/* Inverse: white on blue / navy with the orange base line */
+.inverse {
+  background-color: var(--color-surface);
+  color: var(--color-text-strong);
+  border-bottom: var(--border-marker-heavy);
+}
+
+.inverse:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Disabled / loading: DS V3 colours, never opacity */
+.button:disabled,
+.button[aria-disabled="true"] {
+  background-color: var(--color-surface-disabled);
+  border-color: var(--color-surface-disabled);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.secondary:disabled,
+.secondary[aria-disabled="true"] {
+  background-color: transparent;
+  border-color: var(--color-border-disabled);
+}
+
+.button[aria-busy="true"] {
+  cursor: progress;
+}

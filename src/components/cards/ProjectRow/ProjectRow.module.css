@@ -1,0 +1,98 @@
+/* Mobile (LWProjectItem 390) */
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-block: 28px;
+  border-bottom: var(--border-hairline);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.challenge {
+  max-width: 560px;
+}
+
+.facts {
+  margin: 0;
+  border-top: var(--border-rule-thin);
+}
+
+.fact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: 44px;
+  border-bottom: var(--border-hairline);
+}
+
+.fact dt {
+  flex: none;
+  font-size: var(--text-label-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.fact dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  color: var(--color-text-strong);
+  text-align: right;
+}
+
+.text .link {
+  display: none;
+}
+
+/* Tablet (no LWProjectItem tablet state): photo + text side by side from 768. */
+@media (min-width: 768px) {
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: 40px;
+    padding-block: 44px;
+  }
+
+  .flip .photo {
+    order: 1;
+  }
+
+  .text {
+    gap: 18px;
+  }
+
+  .fact {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: var(--space-16);
+    min-height: 0;
+    padding-block: 11px;
+  }
+
+  .fact dd {
+    font-size: var(--text-label-size);
+    text-align: left;
+  }
+
+  .text .link {
+    display: inline-flex;
+  }
+
+  .text .button {
+    display: none;
+  }
+}
+
+/* Desktop (LWProjectItem 1248): 5 / 7, gap 72. */
+@media (min-width: 1280px) {
+  .row {
+    gap: 72px;
+  }
+}

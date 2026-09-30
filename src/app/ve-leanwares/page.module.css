@@ -1,0 +1,13 @@
+.prose {
+  max-width: var(--measure-prose);
+}
+
+.cta {
+  margin-top: 56px;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    margin-top: var(--section-space);
+  }
+}

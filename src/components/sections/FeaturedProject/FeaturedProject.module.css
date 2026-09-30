@@ -1,0 +1,164 @@
+/* ---------- Mobile (FD v3 390) ---------- */
+.section {
+  padding-block: var(--block-space);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.title {
+  max-width: 1000px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Measurement-point annotation: desktop only (FD v3 1440). */
+.point {
+  display: none;
+}
+
+.pointMarker {
+  display: inline-block;
+  flex: none;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-marker);
+}
+
+/* Story: vertical timeline with orange markers */
+.story {
+  border-left: var(--border-width-hairline) solid var(--color-border-inverse-strong);
+}
+
+.storyStep {
+  position: relative;
+  padding: 0 0 22px var(--space-16);
+}
+
+.storyStep::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--color-marker);
+}
+
+.storyLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--surface-text-muted);
+}
+
+.storyText {
+  padding-top: 6px;
+  color: var(--color-text-inverse-high);
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---------- Tablet (FD v3 1024) ---------- */
+@media (min-width: 768px) {
+  .inner {
+    gap: 40px;
+  }
+
+  .head {
+    gap: 14px;
+  }
+
+  .body {
+    gap: 40px;
+  }
+
+  .story {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-left: 0;
+    border-top: var(--border-width-hairline) solid var(--color-border-inverse-strong);
+  }
+
+  .storyStep {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px var(--space-16) 0 0;
+  }
+
+  .storyStep::before {
+    display: none;
+  }
+
+  .storyText {
+    padding-top: 0;
+  }
+
+  .data {
+    gap: 40px;
+  }
+}
+
+/* ---------- Desktop (FD v3 1440) ---------- */
+@media (min-width: 1280px) {
+  .inner {
+    gap: var(--space-64);
+  }
+
+  .head {
+    gap: 20px;
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-64);
+  }
+
+  .point {
+    position: absolute;
+    left: 32%;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+    color: var(--surface-text-strong);
+  }
+
+  .story {
+    align-content: start;
+  }
+
+  .storyStep {
+    gap: var(--space-12);
+    padding: 22px 22px 0 0;
+  }
+
+  .data {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--space-64);
+    padding-top: 40px;
+    border-top: var(--border-width-hairline) solid var(--color-border-inverse);
+  }
+}

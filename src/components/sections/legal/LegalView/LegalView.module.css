@@ -1,0 +1,135 @@
+/* 5p mobile: 24 / 20 hero; 5p 1440: 40 / 40, H1 52, tabs under a 2px rule. */
+.head {
+  padding-top: var(--space-16);
+}
+
+.breadcrumb {
+  margin-bottom: var(--space-24);
+}
+
+.updated {
+  margin-top: 10px;
+  color: var(--color-text-muted);
+}
+
+.tabs {
+  margin-top: 20px;
+  border-top: var(--border-rule);
+  border-bottom: var(--border-hairline);
+}
+
+.tabs ul {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 22px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  margin-bottom: -1px;
+  border-bottom: var(--border-width-active) solid transparent;
+  color: var(--color-text-strong);
+  font-size: var(--text-small-size);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-text-accent);
+}
+
+.tab:focus-visible {
+  outline-offset: -2px;
+}
+
+.tabActive {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-text-accent);
+}
+
+.body {
+  padding-block: 28px var(--space-48);
+}
+
+.toc {
+  display: none;
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 760px;
+  line-height: var(--text-body-leading);
+}
+
+.prose section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.placeholder {
+  max-width: 760px;
+  padding: var(--space-24);
+  border-left: var(--border-error);
+  background-color: var(--color-surface-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-small-size);
+  color: var(--color-text-strong);
+}
+
+@media (min-width: 768px) {
+  .head {
+    padding-top: var(--space-24);
+  }
+
+  .breadcrumb {
+    margin-bottom: 40px;
+  }
+
+  .tabs {
+    margin-top: 28px;
+  }
+
+  .tabs ul {
+    column-gap: 32px;
+  }
+
+  .tab {
+    font-size: var(--text-body-size);
+  }
+
+  .body {
+    padding-block: var(--space-48) var(--block-space);
+  }
+
+  .withToc {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+    gap: var(--column-gap);
+  }
+
+  .toc {
+    display: block;
+    align-self: start;
+    border-top: var(--border-rule);
+  }
+
+  .tocTitle {
+    padding-block: 14px;
+  }
+
+  .tocLink {
+    display: block;
+    padding-block: 11px;
+    border-top: var(--border-hairline-soft);
+    font-size: var(--text-small-size);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+}

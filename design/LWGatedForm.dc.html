@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="border-top:2px solid #1078BF;background:#fff;padding:28px 0 0;font-family:'Public Sans',sans-serif;color:#282058;display:flex;flex-direction:column;gap:18px">
+<sc-if value="{{ isU }}" hint-placeholder-val="{{ false }}">
+<div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">TẢI TÀI LIỆU</div>
+<div style="font:500 30px/1.15 'Newsreader',serif">Tài liệu mở, không cần đăng ký</div>
+<div style="background:#1078BF;color:#fff;min-height:52px;display:flex;align-items:center;justify-content:center;font:600 16px 'Public Sans',sans-serif">Tải tài liệu</div>
+<div style="font:400 12px 'IBM Plex Mono',monospace;color:#5A5872">PDF · 2.4 MB</div>
+</sc-if>
+<sc-if value="{{ isF }}" hint-placeholder-val="{{ true }}">
+<div style="font:500 30px/1.15 'Newsreader',serif">Tải tài liệu miễn phí</div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:600 13px 'Public Sans',sans-serif">Họ và tên</span><span style="min-height:52px;border:1px solid #8B88A6;padding:0 14px;display:flex;align-items:center;font:400 15px 'Public Sans',sans-serif;color:#6E6C86">Nhập họ và tên</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:600 13px 'Public Sans',sans-serif">Email công ty</span><span style="min-height:52px;border:1px solid #8B88A6;padding:0 14px;display:flex;align-items:center;font:400 15px 'Public Sans',sans-serif;color:#6E6C86">ten@congty.vn</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:600 13px 'Public Sans',sans-serif">Công ty</span><span style="min-height:52px;border:1px solid #8B88A6;padding:0 14px;display:flex;align-items:center;font:400 15px 'Public Sans',sans-serif;color:#6E6C86">Nhập tên công ty</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:600 13px 'Public Sans',sans-serif">Ngành</span><span style="min-height:52px;border:1px solid #8B88A6;padding:0 14px;display:flex;align-items:center;justify-content:space-between;font:400 15px 'Public Sans',sans-serif;color:#6E6C86"><span>Chọn ngành</span><span style="color:#282058">▾</span></span></div>
+<div style="display:flex;gap:12px;align-items:flex-start;font:400 13px/1.6 'Public Sans',sans-serif;color:#4A4766"><span style="width:24px;height:24px;border:1.5px solid #282058;flex-shrink:0"></span><span>Tôi đồng ý để LEANWARES sử dụng thông tin này để gửi tài liệu và nội dung chuyên môn liên quan.</span></div>
+<div style="background:#1078BF;color:#fff;min-height:52px;display:flex;align-items:center;justify-content:center;font:600 16px 'Public Sans',sans-serif">Nhận tài liệu</div>
+<div style="font:400 12px/1.5 'Public Sans',sans-serif;color:#5A5872">Không yêu cầu số điện thoại. PDF + XLSX · 2.4 MB</div>
+</sc-if>
+<sc-if value="{{ isS }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:10px"><span style="width:10px;height:10px;background:#F89018"></span><span style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">HOÀN TẤT</span></div>
+<div style="font:500 36px/1.1 'Newsreader',serif">Cảm ơn bạn</div>
+<div style="font:400 16px/1.6 'Public Sans',sans-serif;color:#4A4766">Tài liệu đã sẵn sàng.</div>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><div style="background:#1078BF;color:#fff;min-height:52px;padding:0 28px;display:flex;align-items:center;font:600 15px 'Public Sans',sans-serif">Tải xuống</div><div style="border:1px solid #282058;min-height:52px;padding:0 24px;display:flex;align-items:center;font:600 15px 'Public Sans',sans-serif">Xem bài viết liên quan</div></div>
+<div style="display:flex;gap:12px;align-items:flex-start;font:400 13px/1.6 'Public Sans',sans-serif;color:#4A4766;border-top:1px solid #D9D6CF;padding-top:16px"><span style="width:24px;height:24px;border:1.5px solid #282058;flex-shrink:0"></span><span>Nhận thêm cập nhật về CBAM, GHG và chuyển đổi xanh.</span></div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:600},&quot;state&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ungated&quot;,&quot;form&quot;,&quot;success&quot;],&quot;default&quot;:&quot;form&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() { const s = this.props.state || 'form'; return { isU: s === 'ungated', isF: s === 'form', isS: s === 'success' }; }
+}
+</script>
+</body>
+</html>

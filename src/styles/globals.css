@@ -1,0 +1,14 @@
+/*
+ * Global stylesheet entry. Order matters: tokens → surfaces → base → type roles.
+ * Component styles live next to their components as CSS Modules.
+ */
+
+@import "./tokens/color.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/layout.css";
+@import "./tokens/border.css";
+@import "./tokens/motion.css";
+@import "./surfaces.css";
+@import "./base.css";
+@import "./typography.css";

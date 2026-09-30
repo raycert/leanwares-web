@@ -1,0 +1,50 @@
+.slot {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: var(--slot-ratio-sm);
+}
+
+@media (min-width: 768px) {
+  .slot {
+    aspect-ratio: var(--slot-ratio-md);
+  }
+}
+
+@media (min-width: 1280px) {
+  .slot {
+    aspect-ratio: var(--slot-ratio-lg);
+  }
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* Placeholder: diagonal hairline stripes, label bottom-left (LWPhoto anatomy). */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-16);
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  line-height: var(--text-data-leading);
+}
+
+.light {
+  background-color: var(--color-surface-placeholder);
+  background-image: repeating-linear-gradient(135deg, var(--color-placeholder-stripe) 0 1px, transparent 1px 11px);
+  color: var(--color-text-muted);
+}
+
+.dark {
+  background-color: var(--color-surface-placeholder-inverse);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-placeholder-stripe-inverse) 0 1px,
+    transparent 1px 11px
+  );
+  color: var(--color-text-inverse-muted);
+}

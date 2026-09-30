@@ -1,0 +1,118 @@
+/* Mobile (5f 390) */
+.hero {
+  padding-top: var(--space-16);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-block: 28px;
+}
+
+.title {
+  max-width: 1100px;
+}
+
+.context {
+  max-width: var(--measure-prose);
+}
+
+.meta {
+  margin: 0;
+  border-top: var(--border-rule);
+}
+
+.metaItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: var(--touch-target-min);
+  padding-block: var(--space-12);
+  border-bottom: var(--border-hairline);
+}
+
+.metaItem dt {
+  flex: none;
+  font-size: var(--text-label-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.metaItem dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  color: var(--color-text-strong);
+  text-align: right;
+}
+
+.point {
+  display: none;
+}
+
+/* Tablet / desktop (5f 1440): meta as one row of columns, padding 56 / 56 */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--space-24);
+  }
+
+  .head {
+    gap: 28px;
+    padding-block: 40px;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--space-32);
+    padding-top: 18px;
+  }
+
+  .metaItem {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+    min-height: 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .metaItem dt {
+    font-size: var(--text-data-size);
+  }
+
+  .metaItem dd {
+    font-size: var(--text-data-table-size);
+    text-align: left;
+  }
+}
+
+@media (min-width: 1280px) {
+  .head {
+    padding-block: 56px;
+  }
+
+  .point {
+    position: absolute;
+    left: 38%;
+    top: 34%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-12);
+    background-color: var(--color-surface);
+    color: var(--color-text-strong);
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .pointMarker {
+    width: var(--marker-size);
+    height: var(--marker-size);
+    background-color: var(--color-marker);
+  }
+}

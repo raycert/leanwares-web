@@ -1,0 +1,103 @@
+/* Template M (Standards Architecture) + DS V3 mega menu. Desktop header only (≥ 1024). */
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-surface);
+  border-top: var(--border-width-rule) solid var(--color-accent);
+  border-bottom: var(--border-hairline);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 3fr)) 1px minmax(0, 4fr);
+  gap: var(--space-32);
+  padding-block: var(--space-32) 28px;
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    gap: 40px;
+    padding-block: 40px 36px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.head,
+.headStacked {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: var(--border-rule);
+}
+
+.head {
+  gap: 10px;
+  align-items: baseline;
+}
+
+.headStacked {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-accent);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: var(--text-title-s-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-title-s-leading);
+  color: var(--color-text-strong);
+}
+
+.divider {
+  background-color: var(--color-border);
+}
+
+.items li {
+  border-bottom: var(--border-hairline-soft);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-text-strong);
+  font-size: var(--text-link-size);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+/* DS V3 row hover: off-white + 2px orange base line */
+.item:hover {
+  color: var(--color-text-strong);
+  background-color: var(--color-surface-subtle);
+  box-shadow: inset 0 calc(-1 * var(--border-width-rule)) 0 var(--color-marker);
+}
+
+.item:focus-visible {
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+.allBar {
+  padding-block: var(--space-16);
+  background-color: var(--color-surface-subtle);
+}

@@ -1,0 +1,81 @@
+/* 5q: tabs bar between a 2px navy rule and a hairline; list under a 2px rule. */
+.section {
+  padding-bottom: var(--space-48);
+}
+
+.tabsBar {
+  margin-bottom: var(--space-24);
+}
+
+.tabs {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  border-top: var(--border-rule);
+  border-bottom: var(--border-hairline);
+  scrollbar-width: none;
+}
+
+.tab {
+  flex: none;
+  min-height: 52px;
+  margin-bottom: -1px;
+  padding: 0;
+  border: 0;
+  border-bottom: var(--border-width-active) solid transparent;
+  background: none;
+  color: var(--color-text-strong);
+  font: inherit;
+  font-size: var(--text-small-size);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab:focus-visible {
+  outline-offset: -2px;
+}
+
+.tabActive {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-text-accent);
+}
+
+.note {
+  margin-bottom: var(--space-16);
+  color: var(--color-text-muted);
+}
+
+.list {
+  border-top: var(--border-rule);
+}
+
+/* Mobile: the resource surface bleeds 8px (5q 390). */
+.resource {
+  margin-inline: -8px;
+  padding-inline: 8px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-bottom: var(--block-space);
+  }
+
+  .tabsBar {
+    margin-bottom: var(--space-48);
+  }
+
+  .tabs {
+    gap: 40px;
+  }
+
+  .tab {
+    min-height: 56px;
+    font-size: var(--text-body-size);
+  }
+
+  .resource {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}

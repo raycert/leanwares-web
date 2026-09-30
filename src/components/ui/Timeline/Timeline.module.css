@@ -1,0 +1,89 @@
+/* < 1024: vertical timeline (5d / 5f mobile) */
+.steps {
+  border-left: var(--border-rule-thin);
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 22px 18px;
+}
+
+.sm .step {
+  padding: 0 0 var(--space-16) var(--space-16);
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.marker {
+  position: absolute;
+  top: 2px;
+  left: -6px;
+  width: 11px;
+  height: 11px;
+  background-color: var(--color-accent);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  color: var(--surface-text-muted);
+}
+
+.title {
+  padding-block: var(--space-4);
+}
+
+/* 5f inline process: 16px titles, mono value line */
+.titleSm {
+  color: var(--surface-text-strong);
+  font-size: var(--text-link-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-title-s-leading);
+}
+
+.descriptionSm {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  line-height: var(--text-data-leading);
+  color: var(--surface-text-muted);
+}
+
+/* ≥ 1024: one row on a navy rule (5d / 5f desktop) */
+@media (min-width: 1024px) {
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(var(--steps), minmax(0, 1fr));
+    border-left: 0;
+    border-top: var(--border-rule-thin);
+  }
+
+  .step,
+  .sm .step {
+    gap: 10px;
+    padding: 0 var(--space-24) 0 0;
+  }
+
+  .sm .step {
+    gap: var(--space-8);
+    padding-right: var(--space-16);
+  }
+
+  .marker {
+    position: static;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+  }
+
+  .label {
+    padding-top: 6px;
+  }
+
+  .title {
+    padding-block: 0;
+  }
+}

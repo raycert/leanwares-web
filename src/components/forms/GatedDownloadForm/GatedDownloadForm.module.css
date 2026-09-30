@@ -1,0 +1,24 @@
+/* LWGatedForm: 2px blue rule on top, 28px in, 18px between fields. */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 28px;
+  border-top: var(--border-width-rule) solid var(--color-accent);
+  background-color: var(--color-surface);
+}
+
+.unavailable {
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+.note {
+  font-size: var(--text-data-size);
+  line-height: var(--text-ui-leading);
+  color: var(--color-text-muted);
+}
+
+.status:empty {
+  display: none;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="display:flex;align-items:center;gap:14px;min-height:{{ h }}px;padding:0 18px;border:{{ bw }} solid {{ bc }};outline:{{ ol }};outline-offset:3px;background:#fff;font-family:'Public Sans',sans-serif;color:#282058">
+<span style="font:500 20px sans-serif;color:#282058">⌕</span>
+<span style="flex:1;font:400 {{ fs }}px 'Public Sans',sans-serif;color:{{ tc }}">{{ text }}</span>
+<sc-if value="{{ filled }}" hint-placeholder-val="{{ false }}"><span style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;font:500 22px sans-serif">×</span></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:800,&quot;height&quot;:72},&quot;state&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;default&quot;,&quot;hover&quot;,&quot;focus&quot;,&quot;filled&quot;],&quot;default&quot;:&quot;default&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.props.state || 'default', m = !!this.props.mobile;
+    return { h: m ? 52 : 68, fs: m ? 16 : 22, filled: s === 'filled',
+      bw: s === 'focus' ? '2px' : '1px', bc: s === 'focus' ? '#1078BF' : (s === 'hover' ? '#282058' : '#8B88A6'),
+      ol: s === 'focus' ? '2px solid #1078BF33' : 'none', tc: s === 'filled' ? '#282058' : '#6E6C86',
+      text: s === 'filled' ? 'CBAM' : 'Tìm dịch vụ, ngành, dự án, bài viết, tài liệu' };
+  }
+}
+</script>
+</body>
+</html>

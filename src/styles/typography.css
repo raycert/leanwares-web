@@ -1,0 +1,217 @@
+/*
+ * Type roles (DS V3 §05). Apply to any element; the HTML level stays semantic.
+ * Colours come from the surrounding surface context (src/styles/surfaces.css).
+ *
+ * Rules:
+ *  - Newsreader only for headlines and large numbers ≥ 28px (.t-display, .t-h2, .t-h3, .t-quote).
+ *  - Small titles use Public Sans 600 (.t-title-s).
+ *  - IBM Plex Mono only for data, standards codes, metadata values and index numbers (.t-data).
+ */
+
+.t-display,
+.t-h2,
+.t-h3,
+.t-quote {
+  font-family: var(--font-serif);
+  color: var(--surface-text-strong);
+  text-wrap: balance;
+}
+
+.t-display {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-leading);
+  letter-spacing: var(--text-display-tracking);
+}
+
+.t-h2 {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-leading);
+  letter-spacing: var(--text-h2-tracking);
+}
+
+.t-h3 {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-leading);
+  letter-spacing: var(--text-h3-tracking);
+}
+
+.t-quote {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-quote-size);
+  line-height: var(--text-quote-leading);
+}
+
+.t-title-l {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-title-l-size);
+  line-height: var(--text-title-l-leading);
+  letter-spacing: var(--text-title-l-tracking);
+  color: var(--surface-text-strong);
+}
+
+.t-title-s {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-title-s-size);
+  line-height: var(--text-title-s-leading);
+  color: var(--surface-text-strong);
+}
+
+.t-lead {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-lead-size);
+  line-height: var(--text-lead-leading);
+  color: var(--surface-text);
+  max-width: var(--measure-lead);
+}
+
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
+  color: var(--surface-text);
+}
+
+.t-small {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-leading);
+  color: var(--surface-text);
+}
+
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-eyebrow-size);
+  line-height: var(--text-eyebrow-leading);
+  letter-spacing: var(--text-eyebrow-tracking);
+  text-transform: uppercase;
+  color: var(--surface-text-accent);
+}
+
+.t-data {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-data-size);
+  line-height: var(--text-data-leading);
+  color: var(--surface-text-muted);
+}
+
+/* Colour modifiers (surface-aware) */
+.t-strong {
+  color: var(--surface-text-strong);
+}
+
+.t-muted {
+  color: var(--surface-text-muted);
+}
+
+.t-accent {
+  color: var(--surface-text-accent);
+}
+
+/* ---- Final Direction v3 roles (decision D8) ------------------------------ */
+
+.t-display-s,
+.t-display-m,
+.t-metric-l,
+.t-h2-s,
+.t-h4,
+.t-feature,
+.t-cta,
+.t-cta-s,
+.t-card-title,
+.t-metric {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-medium);
+  color: var(--surface-text-strong);
+  text-wrap: balance;
+}
+
+.t-display-s {
+  font-size: var(--text-display-s-size);
+  line-height: var(--text-display-s-leading);
+  letter-spacing: var(--text-display-s-tracking);
+}
+
+.t-display-m {
+  font-size: var(--text-display-m-size);
+  line-height: var(--text-display-m-leading);
+  letter-spacing: var(--text-display-m-tracking);
+}
+
+.t-metric-l {
+  font-size: var(--text-metric-l-size);
+  line-height: var(--text-metric-l-leading);
+}
+
+.t-h2-s {
+  font-size: var(--text-h2-s-size);
+  line-height: var(--text-h2-s-leading);
+  letter-spacing: var(--text-h2-s-tracking);
+}
+
+.t-h4 {
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-leading);
+  letter-spacing: var(--text-h4-tracking);
+}
+
+.t-feature {
+  font-size: var(--text-feature-size);
+  line-height: var(--text-feature-leading);
+  letter-spacing: var(--text-feature-tracking);
+}
+
+.t-cta {
+  font-size: var(--text-cta-size);
+  line-height: var(--text-cta-leading);
+  letter-spacing: var(--text-cta-tracking);
+}
+
+.t-cta-s {
+  font-size: var(--text-cta-s-size);
+  line-height: var(--text-cta-s-leading);
+  letter-spacing: var(--text-cta-s-tracking);
+}
+
+.t-card-title {
+  font-size: var(--text-card-title-size);
+  line-height: var(--text-card-title-leading);
+}
+
+.t-metric {
+  font-size: var(--text-metric-size);
+  line-height: var(--text-metric-leading);
+}
+
+.t-title-m {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-title-m-size);
+  line-height: var(--text-title-m-leading);
+  color: var(--surface-text-strong);
+}
+
+.t-body-s {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-body-s-size);
+  line-height: var(--text-body-s-leading);
+  color: var(--surface-text);
+}
+
+.t-data-l {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-data-l-size);
+  line-height: var(--text-data-leading);
+  color: var(--surface-text-muted);
+}

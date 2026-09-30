@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#DEDDD9;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0C5F98;text-decoration:none}
+a:hover{opacity:.75}
+</style>
+</helmet>
+
+<section data-screen-label="Final Direction" style="padding:80px;display:flex;flex-direction:column;gap:56px">
+
+<!-- ===== Spec board ===== -->
+<div id="3a" style="width:1440px;background:#F6F5F2;padding:64px 96px;display:flex;flex-direction:column;gap:48px;font-family:'Public Sans',sans-serif;color:#282058">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+<div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">FINAL DIRECTION · 3a · POLISH &amp; FREEZE</div><div style="font:500 60px/1.03 'Newsreader',serif;letter-spacing:-.02em">Premium Consulting with Industrial Evidence</div></div>
+<div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#5A5872;max-width:460px">75% ngôn ngữ 2a (editorial, nền sáng, serif, đường kẻ mảnh). 25% từ 2b: biểu đồ kỹ thuật, bảng Baseline / Sau / Δ, chú thích dữ liệu, chỉ đặt ở khung GHG và dự án tiêu biểu.</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px">
+<div style="border-top:1px solid #282058;padding-top:16px;display:flex;flex-direction:column;gap:14px"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5A5872">LOGO</div>
+<div style="background:#fff;border:1px solid #D9D6CF;padding:20px;display:flex;justify-content:center"><img src="assets/leanwares-logo.jpg" style="height:96px;width:auto;display:block" alt="LEANWARES"></div>
+<div style="font:400 13px/1.55 'Public Sans',sans-serif;color:#5A5872">Dùng nguyên bản, không chỉnh sửa. File là JPG nền trắng nên chỉ đặt trên nền trắng hoặc trên mảng trắng. Chiều cao tối thiểu 44px.</div></div>
+<div style="border-top:1px solid #282058;padding-top:16px;display:flex;flex-direction:column;gap:14px"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5A5872">MÀU LẤY TỪ LOGO</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0"><div style="background:#1078BF;height:72px;color:#fff;padding:8px;font:500 11px 'IBM Plex Mono',monospace">#1078BF<br>Blue</div><div style="background:#282058;height:72px;color:#fff;padding:8px;font:500 11px 'IBM Plex Mono',monospace">#282058<br>Navy</div><div style="background:#F89018;height:72px;color:#282058;padding:8px;font:500 11px 'IBM Plex Mono',monospace">#F89018<br>Orange</div></div>
+<div style="display:flex;height:16px"><div style="flex:70;background:#F6F5F2;border:1px solid #D9D6CF"></div><div style="flex:20;background:#282058"></div><div style="flex:8;background:#1078BF"></div><div style="flex:2;background:#F89018"></div></div>
+<div style="font:400 13px/1.55 'Public Sans',sans-serif;color:#5A5872">Lấy mẫu điểm ảnh từ file logo (JPG nên có sai số nhỏ). Tỷ lệ 70 / 20 / 8 / 2. Cam chỉ là marker, đường kẻ, số lớn trên nền navy; không dùng làm chữ nhỏ trên nền trắng.</div></div>
+<div style="border-top:1px solid #282058;padding-top:16px;display:flex;flex-direction:column;gap:12px"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5A5872">TYPOGRAPHY</div><div style="font:500 52px/1 'Newsreader',serif">Aa Đo lường</div><div style="font:400 13px/1.6 'Public Sans',sans-serif;color:#5A5872"><b style="color:#282058">Newsreader 500</b> — chỉ headline và số lớn ≥ 28px<br><b style="color:#282058">Public Sans 400/600</b> — nội dung 17px / 1.65<br><span style="font-family:'IBM Plex Mono',monospace;color:#282058">IBM Plex Mono</span> — chú thích dữ liệu, chỉ ở khung GHG và dự án tiêu biểu</div></div>
+<div style="border-top:1px solid #282058;padding-top:16px;display:flex;flex-direction:column;gap:12px"><div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5A5872">QUY TẮC</div>
+<sc-for list="{{ rules }}" as="r" hint-placeholder-count="6"><div style="display:grid;grid-template-columns:20px minmax(0,1fr);font:400 13px/1.5 'Public Sans',sans-serif;padding:6px 0;border-bottom:1px solid #E6E3DC"><span style="width:8px;height:8px;background:#F89018;margin-top:6px"></span><span>{{ r }}</span></div></sc-for></div>
+</div>
+</div>
+
+<div style="display:flex;gap:80px;align-items:flex-start;flex-wrap:nowrap">
+
+<!-- ===== Desktop 1440 ===== -->
+<div id="3b" style="width:1440px;flex-shrink:0;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:14px"><span style="font:500 14px 'IBM Plex Mono',monospace;background:#282058;color:#fff;padding:5px 10px">3b</span><span style="font:600 20px 'Public Sans',sans-serif;color:#282058">Desktop 1440</span></div>
+<div data-screen-label="Desktop 1440" style="width:1440px;background:#fff;color:#282058;font-family:'Public Sans',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,.1)">
+
+<div style="padding:0 96px;height:80px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #D9D6CF">
+<img src="assets/leanwares-logo.jpg" style="height:52px;width:auto;display:block" alt="LEANWARES"><div style="display:flex;gap:30px;font:500 14px 'Public Sans',sans-serif"><sc-for list="{{ nav }}" as="n" hint-placeholder-count="7"><span style="{{ n.s }}">{{ n.t }}</span></sc-for></div>
+</div>
+
+<div style="padding:104px 96px 80px;display:grid;grid-template-columns:7fr 5fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:32px;padding-top:16px">
+<div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">CARBON · ESG · DỮ LIỆU · CẢI TIẾN</div>
+<div style="font:500 82px/1.02 'Newsreader',serif;letter-spacing:-.02em;text-wrap:balance">Giải pháp chuyển đổi xanh cho sản xuất</div>
+<div style="font:400 20px/1.65 'Public Sans',sans-serif;color:#4A4766;max-width:620px">LEANWARES đồng hành cùng doanh nghiệp từ đo lường carbon, tối ưu vận hành đến triển khai giải pháp giảm phát thải cho nhà máy, sản phẩm và chuỗi cung ứng.</div>
+<div style="display:flex;gap:32px;align-items:center;padding-top:8px"><div style="background:#1078BF;color:#fff;padding:18px 32px;font:600 16px 'Public Sans',sans-serif">Khám phá giải pháp</div><div style="font:600 16px 'Public Sans',sans-serif;border-bottom:2px solid #F89018;padding-bottom:4px">Đánh giá cơ hội giảm phát thải →</div></div>
+</div>
+<div style="height:600px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:20px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT] ảnh dọc, hiện trường nhà máy hoặc kỹ sư làm việc tại thiết bị</div>
+</div>
+
+<div style="background:#F6F5F2;padding:128px 96px;display:grid;grid-template-columns:5fr 7fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:24px;align-self:start"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">THỊ TRƯỜNG ĐANG THAY ĐỔI</div><div style="font:500 56px/1.08 'Newsreader',serif;letter-spacing:-.015em">Thị trường không còn chỉ hỏi: “Bạn có chứng chỉ không?”</div></div>
+<div style="border-top:1px solid #282058">
+<sc-for list="{{ questions }}" as="q" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:28px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:500 12px 'IBM Plex Mono',monospace;color:#0C5F98">{{ q.n }}</span><span style="font:400 30px/1.25 'Newsreader',serif">{{ q.q }}</span></div></sc-for>
+</div></div>
+
+<div style="padding:128px 96px 64px;display:flex;flex-direction:column;gap:20px;max-width:900px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">BA TRỤ CỘT GIẢI PHÁP</div><div style="font:500 56px/1.08 'Newsreader',serif;letter-spacing:-.015em">Nhà máy, sản phẩm và chuỗi cung ứng</div></div>
+
+<div style="padding:0 96px;display:grid;grid-template-columns:7fr 5fr;gap:96px;align-items:end">
+<div style="height:480px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:18px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT] khung rộng, hệ thống thiết bị trong xưởng</div>
+<div style="display:flex;flex-direction:column;gap:18px;border-top:2px solid #1078BF;padding-top:24px"><div style="font:500 44px/1.1 'Newsreader',serif">Nhà máy xanh</div><div style="font:400 17px/1.65 'Public Sans',sans-serif;color:#4A4766">Tối ưu năng lượng, nước, nguyên liệu, chất thải và phát thải tại nơi sản xuất.</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 22px;font:500 14px 'Public Sans',sans-serif"><span>Năng lượng</span><span>Nước</span><span>Nguyên liệu</span><span>Chất thải</span><span>Phát thải</span></div></div>
+</div>
+
+<div style="margin-top:112px;background:#282058;color:#fff;padding:96px;display:grid;grid-template-columns:5fr 7fr;gap:96px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px"><div style="font:500 44px/1.1 'Newsreader',serif">Sản phẩm xanh</div><div style="font:400 17px/1.65 'Public Sans',sans-serif;color:#D2D0E6">Định lượng và giảm carbon theo vòng đời sản phẩm để đáp ứng khách hàng và quy định xuất khẩu.</div><div style="display:flex;flex-wrap:wrap;gap:8px 22px;font:500 14px 'Public Sans',sans-serif"><span>Dấu chân carbon (carbon footprint)</span><span>Đánh giá vòng đời (LCA)</span><span>CBAM</span><span>Thiết kế sinh thái (eco-design)</span><span>Dữ liệu sản phẩm (product data)</span></div></div>
+<div style="display:flex;align-items:center;padding:24px 0">
+<sc-for list="{{ life }}" as="l" hint-placeholder-count="5"><div style="flex:1;display:flex;align-items:center;position:relative"><span style="width:14px;height:14px;background:{{ l.c }};flex-shrink:0"></span><span style="flex:1;height:1px;background:#8C87C2"></span><span style="position:absolute;top:26px;left:0;font:400 13px 'Public Sans',sans-serif;color:#D2D0E6;white-space:nowrap">{{ l.t }}</span></div></sc-for>
+</div></div>
+
+<div style="padding:96px 96px 0;display:grid;grid-template-columns:5fr 7fr;gap:96px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px;border-top:2px solid #F89018;padding-top:24px"><div style="font:500 44px/1.1 'Newsreader',serif">Chuỗi cung ứng xanh</div><div style="font:400 17px/1.65 'Public Sans',sans-serif;color:#4A4766">Làm việc với nhà cung cấp để có dữ liệu, giảm phát thải và đáp ứng yêu cầu truy xuất.</div><div style="display:flex;flex-wrap:wrap;gap:8px 22px;font:500 14px 'Public Sans',sans-serif"><span>Đánh giá ESG nhà cung cấp (supplier ESG)</span><span>Phạm vi 3 (Scope 3)</span><span>Truy xuất nguồn gốc</span><span>EUDR</span><span>Tìm nguồn bền vững (sustainable sourcing)</span></div></div>
+<div style="border-top:1px solid #282058">
+<sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid #D9D6CF"><span style="font:500 13px 'Public Sans',sans-serif;color:#5A5872">{{ t.t }}</span><span style="display:flex;gap:8px"><sc-for list="{{ t.d }}" as="d" hint-placeholder-count="8"><span style="width:16px;height:16px;border:1.5px solid #1078BF"></span></sc-for></span></div></sc-for>
+<div style="font:400 12px 'IBM Plex Mono',monospace;color:#5A5872;padding-top:10px">Sơ đồ khái niệm, không phải dữ liệu</div></div>
+</div>
+
+<div style="padding:112px 96px 0;display:grid;grid-template-columns:4fr 8fr;gap:96px"><div style="display:flex;flex-direction:column;gap:16px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">NĂNG LỰC XUYÊN SUỐT</div><div style="font:500 36px/1.12 'Newsreader',serif;letter-spacing:-.015em">Áp dụng cho cả ba trụ cột</div></div><div style="border-top:2px solid #282058"><sc-for list="{{ cross }}" as="c" hint-placeholder-count="2"><div tabindex="0" style="display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,3fr);gap:32px;padding:28px 0;border-bottom:1px solid #D9D6CF;align-items:baseline" style-hover="background:#F6F5F2" style-focus="outline:2px solid #1078BF;outline-offset:-2px"><span style="font:600 22px/1.3 'Public Sans',sans-serif">{{ c.t }}</span><span style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766">{{ c.d }}</span><span style="font:600 14px 'Public Sans',sans-serif;color:#0C5F98;text-align:right">{{ c.cta }}</span></div></sc-for></div></div>
+
+<div style="padding:144px 96px 0;display:flex;flex-direction:column;gap:56px">
+<div style="display:grid;grid-template-columns:6fr 6fr;gap:96px;align-items:end"><div style="display:flex;flex-direction:column;gap:20px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">KHUNG GIẢM PHÁT THẢI GHG</div><div style="font:500 56px/1.08 'Newsreader',serif;letter-spacing:-.015em">Từ dữ liệu phát thải đến hành động giảm phát thải</div></div><div style="font:400 17px/1.65 'Public Sans',sans-serif;color:#4A4766;max-width:520px">Hai pha, bảy bước. Pha 1 xác lập đường cơ sở và điểm nóng. Pha 2 biến điểm nóng thành hành động và theo dõi kết quả.</div></div>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;font:500 12px 'IBM Plex Mono',monospace;padding-bottom:14px"><span><span style="display:inline-block;width:9px;height:9px;background:#F89018;margin-right:8px"></span>Đường cơ sở (tCO2e): [CASE DATA]</span><span style="color:#5A5872">Trục dọc: phát thải</span></div>
+<div style="display:grid;grid-template-columns:3fr 4fr;border-top:1px dashed #282058;padding-top:16px;padding-bottom:6px">
+<div style="border-top:3px solid #1078BF;padding:14px 16px 0 0;margin-right:8px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">PHA 1</div><div style="font:600 22px/1.2 'Public Sans',sans-serif;padding-top:4px">Phân tích carbon</div></div>
+<div style="border-top:3px solid #282058;padding:14px 16px 0 0;margin-left:8px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#282058">PHA 2</div><div style="font:600 22px/1.2 'Public Sans',sans-serif;padding-top:4px">Hành động giảm phát thải</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:start;border-bottom:2px solid #282058">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="7"><div style="margin-top:{{ s.off }}px;padding-right:16px;display:flex;flex-direction:column;gap:8px"><div style="height:4px;background:{{ s.bc }}"></div><div style="font:500 12px 'IBM Plex Mono',monospace;color:#5A5872">{{ s.n }}</div><div style="font:600 19px/1.2 'Public Sans',sans-serif">{{ s.t }}</div><div style="font:400 13.5px/1.55 'Public Sans',sans-serif;color:#4A4766;padding-bottom:18px">{{ s.d }}</div></div></sc-for>
+</div>
+<div style="position:relative;height:84px">
+<div style="position:absolute;left:7.14%;right:7.14%;top:0;height:30px;border:1.5px solid #F89018;border-top:none"></div>
+<span style="position:absolute;left:calc(7.14% - 5px);top:-6px;color:#F89018;font-size:12px;line-height:1">▲</span>
+<div style="position:absolute;left:0;right:0;top:42px;text-align:center;font:400 13px/1.5 'Public Sans',sans-serif;color:#282058">Vòng phản hồi: kết quả bước Theo dõi trở thành đường cơ sở (baseline) mới cho chu kỳ tiếp theo</div></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;border-top:1px solid #D9D6CF;padding-top:18px;font:400 12px 'IBM Plex Mono',monospace"><span>Đường cơ sở: [CASE DATA]</span><span>Mục tiêu (tCO2e): [CASE DATA]</span><span style="text-align:right"><span style="display:inline-block;width:9px;height:9px;background:#F89018;margin-right:8px"></span>Δ: [CASE DATA]</span></div>
+</div></div>
+
+<div style="padding:144px 96px 0;display:grid;grid-template-columns:4fr 8fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:20px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">CÁC NHÓM GIẢI PHÁP CHÍNH</div><div style="font:500 48px/1.1 'Newsreader',serif;letter-spacing:-.015em">Tám nhóm giải pháp</div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;column-gap:64px;border-top:2px solid #282058">
+<sc-for list="{{ solutions }}" as="s" hint-placeholder-count="8"><div style="display:grid;grid-template-columns:36px minmax(0,1fr) 20px;gap:8px;padding:24px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:500 12px 'IBM Plex Mono',monospace;color:#0C5F98">{{ s.n }}</span><span style="font:600 20px/1.3 'Public Sans',sans-serif">{{ s.t }}</span><span style="color:#0C5F98">→</span></div></sc-for>
+</div></div>
+
+<div style="margin-top:144px;background:#F6F5F2;padding:112px 96px;display:grid;grid-template-columns:5fr 7fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:24px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">GIẢI PHÁP THEO NGÀNH</div><div style="font:500 48px/1.1 'Newsreader',serif;letter-spacing:-.015em">Chuyên môn theo từng ngành sản xuất</div>
+<div style="height:400px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:16px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT 4:3] {{ indImg }}</div>
+<div style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">Tương tác: rê chuột hoặc focus bàn phím vào một ngành để đổi ảnh (200ms)</div></div>
+<div style="border-top:2px solid #282058">
+<sc-for list="{{ industries }}" as="i" hint-placeholder-count="6"><div tabIndex="0" onMouseEnter="{{ i.on }}" onFocus="{{ i.on }}" style="display:flex;justify-content:space-between;align-items:center;padding:28px 12px 28px 20px;border-bottom:1px solid #D9D6CF;border-left:3px solid {{ i.bar }};background:{{ i.bg }};cursor:pointer;outline-offset:-3px"><span style="font:500 28px/1.15 'Public Sans',sans-serif;letter-spacing:-.01em">{{ i.t }}</span><span style="color:#0C5F98;font-size:20px">→</span></div></sc-for>
+</div></div>
+
+<div style="background:#282058;color:#fff;padding:120px 96px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:20px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#F89018">DỰ ÁN TIÊU BIỂU</div><div style="font:500 52px/1.1 'Newsreader',serif;letter-spacing:-.015em;max-width:1000px">[CASE DATA] Tên dự án và kết quả chính</div><div style="font:400 13px 'IBM Plex Mono',monospace;color:#B9B5DC">Ngành / địa điểm: [CASE DATA]</div></div>
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:64px">
+<div style="height:100%;min-height:400px;background:repeating-linear-gradient(135deg,#3B3378 0 1px,transparent 1px 11px);background-color:#30286A;position:relative;font:400 12px 'IBM Plex Mono',monospace;color:#B9B5DC"><span style="position:absolute;left:18px;bottom:18px">[ẢNH DỰ ÁN]</span><span style="position:absolute;left:32%;top:30%;display:flex;align-items:center;gap:8px;color:#fff"><span style="width:12px;height:12px;background:#F89018"></span>Điểm đo: [CASE DATA]</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-content:start;position:relative">
+<div style="position:absolute;top:0;left:0;right:0;height:1px;background:#8C87C2"></div>
+<sc-for list="{{ cs }}" as="c" hint-placeholder-count="4"><div style="padding:22px 22px 0 0;display:flex;flex-direction:column;gap:12px"><div style="font:500 12px 'IBM Plex Mono',monospace;color:#B9B5DC">{{ c.n }} → {{ c.k }}</div><div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#E7E5F5">{{ c.t }}</div></div></sc-for>
+</div></div>
+<div style="display:grid;grid-template-columns:7fr 5fr;gap:64px;border-top:1px solid #4A4380;padding-top:40px">
+<div style="font:400 15px 'IBM Plex Mono',monospace">
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 0;border-bottom:1px solid #8C87C2;font-size:12px;color:#B9B5DC"><span>CHỈ SỐ</span><span style="text-align:right">ĐƯỜNG CƠ SỞ</span><span style="text-align:right">SAU DỰ ÁN</span><span style="text-align:right">Δ</span></div>
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px 0;border-bottom:1px solid #4A4380"><span>{{ r }}</span><span style="text-align:right;color:#B9B5DC">[CASE DATA]</span><span style="text-align:right;color:#B9B5DC">[CASE DATA]</span><span style="text-align:right;display:flex;justify-content:flex-end;align-items:center;gap:8px"><span style="width:8px;height:8px;background:#F89018"></span>[CASE DATA]</span></div></sc-for></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px"><sc-for list="{{ kpiLabels }}" as="k" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:8px"><div style="font:500 44px/1 'Newsreader',serif;color:{{ k.c }}">[CASE DATA]</div><div style="font:400 14px 'Public Sans',sans-serif;color:#D2D0E6">{{ k.l }}</div></div></sc-for></div>
+</div></div>
+
+<div style="padding:128px 96px 0;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end"><div style="display:flex;flex-direction:column;gap:20px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">KIẾN THỨC</div><div style="font:500 48px/1.1 'Newsreader',serif;letter-spacing:-.015em">Góc nhìn &amp; Tài liệu</div></div><div style="font:600 15px 'Public Sans',sans-serif;border-bottom:1px solid #282058;padding-bottom:2px">Tất cả kiến thức →</div></div>
+<div style="display:grid;grid-template-columns:7fr 5fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:18px"><div style="height:340px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4"></div><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">BÀI PHÂN TÍCH</div><div style="font:500 34px/1.2 'Newsreader',serif">[Tiêu đề bài phân tích nổi bật]</div></div>
+<div style="border-top:2px solid #282058;display:flex;flex-direction:column"><div style="padding:22px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:8px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">HƯỚNG DẪN</div><div style="font:600 19px/1.4 'Public Sans',sans-serif">[Tiêu đề bài viết]</div></div><div style="padding:22px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:8px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">CẬP NHẬT QUY ĐỊNH</div><div style="font:600 19px/1.4 'Public Sans',sans-serif">[Tiêu đề bài viết]</div></div><div style="background:#F6F5F2;padding:22px 24px;display:flex;flex-direction:column;gap:10px;margin-top:8px"><div style="display:flex;align-items:center;gap:10px"><span style="width:10px;height:10px;background:#F89018"></span><span style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">TÀI LIỆU</span></div><div style="font:600 20px/1.35 'Public Sans',sans-serif">Checklist dữ liệu CBAM cho doanh nghiệp thép</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:#5A5872">PDF + Excel</div><div style="font:600 14px 'Public Sans',sans-serif;border-bottom:2px solid #F89018;padding-bottom:3px;align-self:flex-start">Tải tài liệu →</div></div></div>
+</div></div>
+
+<div style="margin-top:128px;background:#1078BF;color:#fff;padding:120px 96px;display:grid;grid-template-columns:8fr 4fr;gap:96px;align-items:end">
+<div style="font:500 72px/1.05 'Newsreader',serif;letter-spacing:-.02em;text-wrap:balance">Nhà máy của bạn có thể giảm bao nhiêu phát thải?</div>
+<div style="background:#fff;color:#282058;padding:18px 30px;font:600 16px 'Public Sans',sans-serif;align-self:end;justify-self:start;border-bottom:3px solid #F89018">Đăng ký đánh giá sơ bộ</div>
+</div>
+<div style="background:#282058;color:#D2D0E6;padding:72px 96px 32px;display:flex;flex-direction:column;gap:48px">
+<div style="display:grid;grid-template-columns:4fr repeat(4,minmax(0,2fr));gap:48px"><div style="display:flex;flex-direction:column;gap:16px"><div style="background:#fff;padding:12px;align-self:flex-start"><img src="assets/leanwares-logo.jpg" style="height:72px;width:auto;display:block" alt="LEANWARES"></div><span style="font:400 13px 'Public Sans',sans-serif">Công ty Cổ phần LEANWARES</span></div>
+<sc-for list="{{ mega }}" as="m" hint-placeholder-count="4"><div style="display:flex;flex-direction:column;gap:9px;font:400 14px 'Public Sans',sans-serif"><span style="color:#fff;font-weight:600">{{ m.t }}</span><sc-for list="{{ m.i }}" as="x" hint-placeholder-count="5"><span>{{ x }}</span></sc-for></div></sc-for></div>
+<div style="border-top:1px solid #4A4380;padding-top:20px;display:flex;justify-content:space-between;font:400 12px 'IBM Plex Mono',monospace"><span>© LEANWARES</span><span>Privacy · Terms · Cookie Policy</span></div>
+</div>
+</div>
+</div>
+
+<!-- ===== Tablet 1024 ===== -->
+<div id="3c" style="width:1024px;flex-shrink:0;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:14px"><span style="font:500 14px 'IBM Plex Mono',monospace;background:#282058;color:#fff;padding:5px 10px">3c</span><span style="font:600 20px 'Public Sans',sans-serif;color:#282058">Tablet 1024</span></div>
+<div data-screen-label="Tablet 1024" style="width:1024px;background:#fff;color:#282058;font-family:'Public Sans',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,.1)">
+<div style="padding:0 56px;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #D9D6CF"><img src="assets/leanwares-logo.jpg" style="height:48px;width:auto;display:block" alt="LEANWARES"><div style="display:flex;gap:22px;font:500 13.5px 'Public Sans',sans-serif"><sc-for list="{{ nav }}" as="n" hint-placeholder-count="7"><span style="{{ n.s }}">{{ n.t }}</span></sc-for></div></div>
+
+<div style="padding:72px 56px 64px;display:grid;grid-template-columns:7fr 5fr;gap:48px">
+<div style="display:flex;flex-direction:column;gap:26px;padding-top:8px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">CARBON · ESG · DỮ LIỆU · CẢI TIẾN</div><div style="font:500 60px/1.03 'Newsreader',serif;letter-spacing:-.02em;text-wrap:balance">Giải pháp chuyển đổi xanh cho sản xuất</div><div style="font:400 18px/1.65 'Public Sans',sans-serif;color:#4A4766">LEANWARES đồng hành cùng doanh nghiệp từ đo lường carbon, tối ưu vận hành đến triển khai giải pháp giảm phát thải cho nhà máy, sản phẩm và chuỗi cung ứng.</div>
+<div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start"><div style="background:#1078BF;color:#fff;padding:16px 28px;font:600 15px 'Public Sans',sans-serif">Khám phá giải pháp</div><div style="font:600 15px 'Public Sans',sans-serif;border-bottom:2px solid #F89018;padding-bottom:4px">Đánh giá cơ hội giảm phát thải →</div></div></div>
+<div style="height:470px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:16px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT 4:5]</div></div>
+
+<div style="background:#F6F5F2;padding:88px 56px;display:flex;flex-direction:column;gap:40px"><div style="font:500 44px/1.1 'Newsreader',serif;max-width:700px">Thị trường không còn chỉ hỏi: “Bạn có chứng chỉ không?”</div>
+<div style="border-top:1px solid #282058"><sc-for list="{{ questions }}" as="q" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:44px minmax(0,1fr);padding:22px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:500 12px 'IBM Plex Mono',monospace;color:#0C5F98">{{ q.n }}</span><span style="font:400 27px/1.25 'Newsreader',serif">{{ q.q }}</span></div></sc-for></div></div>
+
+<div style="padding:88px 56px 0;display:flex;flex-direction:column;gap:40px"><div style="font:500 44px/1.1 'Newsreader',serif">Nhà máy, sản phẩm và chuỗi cung ứng</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end"><div style="height:300px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:14px;display:flex;align-items:flex-end;font:400 12px 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT 3:2]</div><div style="border-top:2px solid #1078BF;padding-top:20px;display:flex;flex-direction:column;gap:12px"><div style="font:500 36px/1.1 'Newsreader',serif">Nhà máy xanh</div><div style="font:400 16px/1.65 'Public Sans',sans-serif;color:#4A4766">Tối ưu năng lượng, nước, nguyên liệu, chất thải và phát thải tại nơi sản xuất.</div></div></div></div>
+<div style="margin-top:56px;background:#282058;color:#fff;padding:64px 56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center"><div style="display:flex;flex-direction:column;gap:12px"><div style="font:500 36px/1.1 'Newsreader',serif">Sản phẩm xanh</div><div style="font:400 16px/1.65 'Public Sans',sans-serif;color:#D2D0E6">Định lượng và giảm carbon theo vòng đời sản phẩm.</div></div><div style="display:flex;flex-direction:column"><sc-for list="{{ life }}" as="l" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:14px;padding:9px 0;border-bottom:1px solid #4A4380;font:400 14px 'Public Sans',sans-serif"><span style="width:12px;height:12px;background:{{ l.c }}"></span>{{ l.t }}</div></sc-for></div></div>
+<div style="padding:56px 56px 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center"><div style="border-top:2px solid #F89018;padding-top:20px;display:flex;flex-direction:column;gap:12px"><div style="font:500 36px/1.1 'Newsreader',serif">Chuỗi cung ứng xanh</div><div style="font:400 16px/1.65 'Public Sans',sans-serif;color:#4A4766">Làm việc với nhà cung cấp để có dữ liệu, giảm phát thải và đáp ứng yêu cầu truy xuất.</div></div>
+<div style="border-top:1px solid #282058"><sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid #D9D6CF;font:500 12px 'Public Sans',sans-serif;color:#5A5872"><span>{{ t.t }}</span><span style="display:flex;gap:6px"><sc-for list="{{ t.d }}" as="d" hint-placeholder-count="8"><span style="width:12px;height:12px;border:1.5px solid #1078BF"></span></sc-for></span></div></sc-for></div></div>
+
+<div style="padding:88px 56px 0;display:grid;grid-template-columns:4fr 8fr;gap:48px"><div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">NĂNG LỰC XUYÊN SUỐT</div><div style="font:500 32px/1.12 'Newsreader',serif">Áp dụng cho cả ba trụ cột</div></div><div style="border-top:2px solid #282058"><sc-for list="{{ cross }}" as="c" hint-placeholder-count="2"><div style="padding:22px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:8px;min-height:56px"><span style="font:600 20px/1.3 'Public Sans',sans-serif">{{ c.t }}</span><span style="font:400 15px/1.6 'Public Sans',sans-serif;color:#4A4766">{{ c.d }}</span><span style="font:600 14px 'Public Sans',sans-serif;color:#0C5F98">{{ c.cta }}</span></div></sc-for></div></div>
+
+<div style="padding:104px 56px 0;display:flex;flex-direction:column;gap:32px"><div style="display:flex;flex-direction:column;gap:16px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">KHUNG GIẢM PHÁT THẢI GHG</div><div style="font:500 44px/1.1 'Newsreader',serif;max-width:760px">Từ dữ liệu phát thải đến hành động giảm phát thải</div></div>
+<div style="font:500 12px 'IBM Plex Mono',monospace"><span style="display:inline-block;width:9px;height:9px;background:#F89018;margin-right:8px"></span>Đường cơ sở (tCO2e): [CASE DATA]</div>
+<div style="border-top:3px solid #1078BF;padding-top:14px;display:flex;flex-direction:column;gap:16px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">PHA 1 · PHÂN TÍCH CARBON</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px"><sc-for list="{{ steps1 }}" as="s" hint-placeholder-count="3"><div style="margin-top:{{ s.off }}px;border-top:1px solid #282058;padding-top:12px;display:flex;flex-direction:column;gap:6px"><div style="font:500 12px 'IBM Plex Mono',monospace;color:#5A5872">{{ s.n }}</div><div style="font:600 18px/1.25 'Public Sans',sans-serif">{{ s.t }}</div><div style="font:400 14px/1.55 'Public Sans',sans-serif;color:#4A4766">{{ s.d }}</div></div></sc-for></div></div>
+<div style="border-top:3px solid #282058;padding-top:14px;display:flex;flex-direction:column;gap:16px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#282058">PHA 2 · HÀNH ĐỘNG GIẢM PHÁT THẢI</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px"><sc-for list="{{ steps2 }}" as="s" hint-placeholder-count="4"><div style="border-top:1px solid #282058;padding-top:12px;display:flex;flex-direction:column;gap:6px"><div style="font:500 12px 'IBM Plex Mono',monospace;color:#5A5872">{{ s.n }}</div><div style="font:600 18px/1.25 'Public Sans',sans-serif">{{ s.t }}</div><div style="font:400 14px/1.55 'Public Sans',sans-serif;color:#4A4766">{{ s.d }}</div></div></sc-for></div></div>
+<div style="border:1.5px solid #F89018;padding:14px 18px;display:flex;gap:12px;font:400 14px/1.55 'Public Sans',sans-serif"><span style="color:#F89018">↻</span><span>Vòng phản hồi: kết quả bước Theo dõi trở thành đường cơ sở (baseline) mới cho chu kỳ tiếp theo.</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid #D9D6CF;padding-top:14px;font:400 12px 'IBM Plex Mono',monospace"><span>Đường cơ sở: [CASE DATA]</span><span>Mục tiêu (tCO2e): [CASE DATA]</span><span style="text-align:right"><span style="display:inline-block;width:9px;height:9px;background:#F89018;margin-right:8px"></span>Δ: [CASE DATA]</span></div></div>
+
+<div style="padding:104px 56px 0;display:grid;grid-template-columns:4fr 8fr;gap:48px"><div style="font:500 40px/1.1 'Newsreader',serif">Tám nhóm giải pháp</div><div style="display:grid;grid-template-columns:1fr 1fr;column-gap:40px;border-top:2px solid #282058"><sc-for list="{{ solutions }}" as="s" hint-placeholder-count="8"><div style="display:grid;grid-template-columns:32px minmax(0,1fr) 18px;gap:6px;padding:20px 0;border-bottom:1px solid #D9D6CF;align-items:baseline;min-height:56px"><span style="font:500 12px 'IBM Plex Mono',monospace;color:#0C5F98">{{ s.n }}</span><span style="font:600 18px/1.3 'Public Sans',sans-serif">{{ s.t }}</span><span style="color:#0C5F98">→</span></div></sc-for></div></div>
+
+<div style="margin-top:104px;background:#F6F5F2;padding:80px 56px;display:grid;grid-template-columns:5fr 7fr;gap:48px"><div style="display:flex;flex-direction:column;gap:20px"><div style="font:500 40px/1.1 'Newsreader',serif">Chuyên môn theo từng ngành sản xuất</div><div style="height:260px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:14px;display:flex;align-items:flex-end;font:400 12px/1.5 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT 4:3] {{ indImg }}</div></div>
+<div style="border-top:2px solid #282058"><sc-for list="{{ industries }}" as="i" hint-placeholder-count="6"><div tabIndex="0" onMouseEnter="{{ i.on }}" onFocus="{{ i.on }}" style="display:flex;justify-content:space-between;align-items:center;padding:22px 12px 22px 18px;border-bottom:1px solid #D9D6CF;border-left:3px solid {{ i.bar }};background:{{ i.bg }};cursor:pointer;min-height:56px"><span style="font:500 24px/1.2 'Public Sans',sans-serif">{{ i.t }}</span><span style="color:#0C5F98">→</span></div></sc-for></div></div>
+
+<div style="background:#282058;color:#fff;padding:88px 56px;display:flex;flex-direction:column;gap:40px"><div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#F89018">DỰ ÁN TIÊU BIỂU</div><div style="font:500 40px/1.12 'Newsreader',serif">[CASE DATA] Tên dự án và kết quả chính</div><div style="font:400 13px 'IBM Plex Mono',monospace;color:#B9B5DC">Ngành / địa điểm: [CASE DATA]</div></div>
+<div style="height:300px;background:repeating-linear-gradient(135deg,#3B3378 0 1px,transparent 1px 11px);background-color:#30286A;padding:14px;display:flex;align-items:flex-end;font:400 12px 'IBM Plex Mono',monospace;color:#B9B5DC">[ẢNH DỰ ÁN 6:5]</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #8C87C2"><sc-for list="{{ cs }}" as="c" hint-placeholder-count="4"><div style="padding:18px 16px 0 0;display:flex;flex-direction:column;gap:10px"><div style="font:500 12px 'IBM Plex Mono',monospace;color:#B9B5DC">{{ c.n }} → {{ c.k }}</div><div style="font:400 14px/1.6 'Public Sans',sans-serif;color:#E7E5F5">{{ c.t }}</div></div></sc-for></div>
+<div style="font:400 14px 'IBM Plex Mono',monospace;border-top:1px solid #8C87C2"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 0;border-bottom:1px solid #8C87C2;font-size:12px;color:#B9B5DC"><span>CHỈ SỐ</span><span style="text-align:right">ĐƯỜNG CƠ SỞ</span><span style="text-align:right">SAU DỰ ÁN</span><span style="text-align:right">Δ</span></div><sc-for list="{{ rows }}" as="r" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:14px 0;border-bottom:1px solid #4A4380"><span style="font-family:'Public Sans',sans-serif">{{ r }}</span><span style="text-align:right;color:#B9B5DC">[CASE DATA]</span><span style="text-align:right;color:#B9B5DC">[CASE DATA]</span><span style="text-align:right;display:flex;justify-content:flex-end;gap:8px;align-items:center"><span style="width:8px;height:8px;background:#F89018"></span>[CASE DATA]</span></div></sc-for></div></div>
+
+<div style="padding:96px 56px 0;display:flex;flex-direction:column;gap:32px"><div style="font:500 40px/1.1 'Newsreader',serif">Góc nhìn &amp; Tài liệu</div>
+<div style="display:grid;grid-template-columns:7fr 5fr;gap:48px"><div style="display:flex;flex-direction:column;gap:14px"><div style="height:240px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4"></div><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">BÀI PHÂN TÍCH</div><div style="font:500 28px/1.2 'Newsreader',serif">[Tiêu đề bài phân tích nổi bật]</div></div>
+<div style="border-top:2px solid #282058"><div style="padding:18px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:6px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">HƯỚNG DẪN</div><div style="font:600 18px/1.35 'Public Sans',sans-serif">[Tiêu đề bài viết]</div></div><div style="padding:18px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:6px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">CẬP NHẬT QUY ĐỊNH</div><div style="font:600 18px/1.35 'Public Sans',sans-serif">[Tiêu đề bài viết]</div></div><div style="background:#F6F5F2;padding:20px;display:flex;flex-direction:column;gap:8px;margin-top:8px"><div style="display:flex;align-items:center;gap:10px"><span style="width:10px;height:10px;background:#F89018"></span><span style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">TÀI LIỆU</span></div><div style="font:600 17px/1.35 'Public Sans',sans-serif">Checklist dữ liệu CBAM cho doanh nghiệp thép</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:#5A5872">PDF + Excel</div><div style="font:600 14px 'Public Sans',sans-serif;border-bottom:2px solid #F89018;padding-bottom:2px;align-self:flex-start;min-height:44px;display:flex;align-items:center">Tải tài liệu →</div></div></div></div></div>
+
+<div style="margin-top:96px;background:#1078BF;color:#fff;padding:80px 56px;display:flex;flex-direction:column;gap:32px"><div style="font:500 52px/1.06 'Newsreader',serif;letter-spacing:-.02em;max-width:800px">Nhà máy của bạn có thể giảm bao nhiêu phát thải?</div><div style="background:#fff;color:#282058;padding:16px 28px;font:600 15px 'Public Sans',sans-serif;align-self:flex-start;border-bottom:3px solid #F89018">Đăng ký đánh giá sơ bộ</div></div>
+<div style="background:#282058;color:#D2D0E6;padding:56px 56px 24px;display:flex;flex-direction:column;gap:36px"><div style="display:grid;grid-template-columns:3fr repeat(4,2fr);gap:28px"><div style="display:flex;flex-direction:column;gap:14px"><div style="background:#fff;padding:10px;align-self:flex-start"><img src="assets/leanwares-logo.jpg" style="height:56px;width:auto;display:block" alt="LEANWARES"></div><span style="font:400 13px 'Public Sans',sans-serif">Công ty Cổ phần LEANWARES</span></div><sc-for list="{{ mega }}" as="m" hint-placeholder-count="4"><div style="font:600 13px 'Public Sans',sans-serif;color:#fff">{{ m.t }}</div></sc-for></div><div style="border-top:1px solid #4A4380;padding-top:16px;display:flex;justify-content:space-between;font:400 12px 'IBM Plex Mono',monospace"><span>© LEANWARES</span><span>Privacy · Terms · Cookie Policy</span></div></div>
+</div>
+</div>
+
+<!-- ===== Mobile 390 ===== -->
+<div id="3d" style="width:390px;flex-shrink:0;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:14px"><span style="font:500 14px 'IBM Plex Mono',monospace;background:#282058;color:#fff;padding:5px 10px">3d</span><span style="font:600 20px 'Public Sans',sans-serif;color:#282058">Mobile 390</span></div>
+<div data-screen-label="Mobile 390" style="width:390px;background:#fff;color:#282058;font-family:'Public Sans',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,.1)">
+
+<div style="padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #D9D6CF">
+<img src="assets/leanwares-logo.jpg" style="height:48px;width:auto;display:block" alt="LEANWARES">
+<div style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:6px"><span style="width:24px;height:2px;background:#282058"></span><span style="width:24px;height:2px;background:#282058"></span><span style="width:16px;height:2px;background:#282058"></span></div>
+</div>
+
+<div style="padding:44px 20px 40px;display:flex;flex-direction:column;gap:22px">
+<div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">CARBON · ESG · DỮ LIỆU · CẢI TIẾN</div>
+<div style="font:500 46px/1.03 'Newsreader',serif;letter-spacing:-.02em;text-wrap:balance">Giải pháp chuyển đổi xanh cho sản xuất</div>
+<div style="font:400 16px/1.65 'Public Sans',sans-serif;color:#4A4766">LEANWARES đồng hành cùng doanh nghiệp từ đo lường carbon, tối ưu vận hành đến triển khai giải pháp giảm phát thải cho nhà máy, sản phẩm và chuỗi cung ứng.</div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="background:#1078BF;color:#fff;padding:16px;text-align:center;font:600 15px 'Public Sans',sans-serif;min-height:48px">Khám phá giải pháp</div><div style="padding:14px;text-align:center;font:600 15px 'Public Sans',sans-serif;border:1px solid #282058;min-height:48px">Đánh giá cơ hội giảm phát thải</div></div>
+</div>
+<div style="margin:0 20px;height:340px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:14px;display:flex;align-items:flex-end;font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT] hiện trường nhà máy</div>
+
+<div style="background:#F6F5F2;margin-top:56px;padding:64px 20px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">THỊ TRƯỜNG ĐANG THAY ĐỔI</div><div style="font:500 32px/1.12 'Newsreader',serif">Thị trường không còn chỉ hỏi: “Bạn có chứng chỉ không?”</div></div>
+<div style="border-top:1px solid #282058"><sc-for list="{{ questions }}" as="q" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:30px minmax(0,1fr);padding:18px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#0C5F98">{{ q.n }}</span><span style="font:400 21px/1.3 'Newsreader',serif">{{ q.q }}</span></div></sc-for></div>
+</div>
+
+<div style="padding:64px 20px 0;display:flex;flex-direction:column;gap:14px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">BA TRỤ CỘT GIẢI PHÁP</div><div style="font:500 32px/1.12 'Newsreader',serif">Nhà máy, sản phẩm và chuỗi cung ứng</div></div>
+<div style="padding:32px 20px 0;display:flex;flex-direction:column;gap:16px">
+<div style="height:220px;background:repeating-linear-gradient(135deg,#DAD7CF 0 1px,transparent 1px 11px);background-color:#ECEAE4;padding:12px;display:flex;align-items:flex-end;font:400 11px 'IBM Plex Mono',monospace;color:#5A5872">[ẢNH THẬT]</div>
+<div style="border-top:2px solid #1078BF;padding-top:16px;display:flex;flex-direction:column;gap:10px"><div style="font:500 30px/1.1 'Newsreader',serif">Nhà máy xanh</div><div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766">Tối ưu năng lượng, nước, nguyên liệu, chất thải và phát thải tại nơi sản xuất.</div></div></div>
+<div style="margin-top:44px;background:#282058;color:#fff;padding:44px 20px;display:flex;flex-direction:column;gap:16px"><div style="font:500 30px/1.1 'Newsreader',serif">Sản phẩm xanh</div><div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#D2D0E6">Dấu chân carbon (carbon footprint), đánh giá vòng đời (LCA), CBAM, thiết kế sinh thái (eco-design) và dữ liệu sản phẩm (product data) theo vòng đời sản phẩm.</div>
+<div style="display:flex;flex-direction:column;padding-top:8px"><sc-for list="{{ life }}" as="l" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:14px;padding:8px 0;font:400 14px 'Public Sans',sans-serif"><span style="width:12px;height:12px;background:{{ l.c }}"></span>{{ l.t }}</div></sc-for></div></div>
+<div style="padding:44px 20px 0;display:flex;flex-direction:column;gap:10px"><div style="border-top:2px solid #F89018;padding-top:16px;display:flex;flex-direction:column;gap:10px"><div style="font:500 30px/1.1 'Newsreader',serif">Chuỗi cung ứng xanh</div><div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766">Đánh giá ESG nhà cung cấp (supplier ESG), phạm vi 3 (Scope 3), truy xuất nguồn gốc, EUDR và tìm nguồn bền vững (sustainable sourcing).</div></div></div>
+
+<div style="padding:64px 20px 0;display:flex;flex-direction:column;gap:20px"><div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">NĂNG LỰC XUYÊN SUỐT</div><div style="font:500 30px/1.12 'Newsreader',serif">Áp dụng cho cả ba trụ cột</div></div><div style="border-top:2px solid #282058"><sc-for list="{{ cross }}" as="c" hint-placeholder-count="2"><div style="padding:20px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:8px;min-height:56px"><span style="font:600 18px/1.3 'Public Sans',sans-serif">{{ c.t }}</span><span style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:#4A4766">{{ c.d }}</span><span style="font:600 14px 'Public Sans',sans-serif;color:#0C5F98;min-height:44px;display:flex;align-items:center">{{ c.cta }}</span></div></sc-for></div></div>
+
+<div style="padding:72px 20px 0;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">KHUNG GIẢM PHÁT THẢI GHG</div><div style="font:500 32px/1.12 'Newsreader',serif">Từ dữ liệu phát thải đến hành động giảm phát thải</div></div>
+<div style="font:500 12px 'IBM Plex Mono',monospace"><span style="display:inline-block;width:9px;height:9px;background:#F89018;margin-right:8px"></span>Đường cơ sở (tCO2e): [CASE DATA]</div>
+<div>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="7"><div>
+<sc-if value="{{ s.ph }}" hint-placeholder-val="{{ false }}"><div style="border-top:3px solid {{ s.bc }};padding:12px 0 16px;font:600 13px 'Public Sans',sans-serif;letter-spacing:.1em;color:{{ s.bc }}">{{ s.ph }}</div></sc-if>
+<div style="margin-left:{{ s.moff }}px;border-left:1px solid #282058;padding:0 0 22px 16px;position:relative"><span style="position:absolute;left:-5px;top:4px;width:9px;height:9px;background:{{ s.bc }}"></span><div style="font:500 11px 'IBM Plex Mono',monospace;color:#5A5872">{{ s.n }}</div><div style="font:600 18px/1.25 'Public Sans',sans-serif;padding:3px 0 4px">{{ s.t }}</div><div style="font:400 14px/1.55 'Public Sans',sans-serif;color:#4A4766">{{ s.d }}</div></div></div></sc-for></div>
+<div style="border:1.5px solid #F89018;padding:14px 16px;display:flex;gap:12px;font:400 13.5px/1.55 'Public Sans',sans-serif"><span style="color:#F89018">↻</span><span>Vòng phản hồi: kết quả bước Theo dõi trở thành đường cơ sở (baseline) mới cho chu kỳ tiếp theo.</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;font:400 12px 'IBM Plex Mono',monospace;border-top:1px dashed #282058;padding-top:12px"><span>Mục tiêu (tCO2e): [CASE DATA]</span><span><span style="display:inline-block;width:9px;height:9px;background:#F89018;margin-right:8px"></span>Δ: [CASE DATA]</span></div>
+</div>
+
+<div style="padding:72px 20px 0;display:flex;flex-direction:column;gap:20px"><div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">CÁC NHÓM GIẢI PHÁP CHÍNH</div><div style="font:500 32px/1.12 'Newsreader',serif">Tám nhóm giải pháp</div></div>
+<div style="border-top:2px solid #282058"><sc-for list="{{ solutions }}" as="s" hint-placeholder-count="8"><div style="display:grid;grid-template-columns:30px minmax(0,1fr) 20px;padding:16px 0;border-bottom:1px solid #D9D6CF;align-items:baseline;min-height:56px"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#0C5F98">{{ s.n }}</span><span style="font:600 17px/1.35 'Public Sans',sans-serif">{{ s.t }}</span><span style="color:#0C5F98">→</span></div></sc-for></div></div>
+
+<div style="margin-top:72px;background:#F6F5F2;padding:56px 20px;display:flex;flex-direction:column;gap:22px"><div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">GIẢI PHÁP THEO NGÀNH</div><div style="font:500 32px/1.12 'Newsreader',serif">Chuyên môn theo từng ngành sản xuất</div></div>
+<div style="border-top:2px solid #282058"><sc-for list="{{ industries }}" as="i" hint-placeholder-count="6"><div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #D9D6CF;min-height:56px"><span style="font:600 18px/1.3 'Public Sans',sans-serif">{{ i.t }}</span><span style="color:#0C5F98">→</span></div></sc-for></div></div>
+
+<div style="background:#282058;color:#fff;padding:56px 20px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#F89018">DỰ ÁN TIÊU BIỂU</div><div style="font:500 30px/1.12 'Newsreader',serif">[CASE DATA] Tên dự án và kết quả chính</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:#B9B5DC">Ngành / địa điểm: [CASE DATA]</div></div>
+<div style="height:220px;background:repeating-linear-gradient(135deg,#3B3378 0 1px,transparent 1px 11px);background-color:#30286A;padding:12px;display:flex;align-items:flex-end;font:400 11px 'IBM Plex Mono',monospace;color:#B9B5DC">[ẢNH DỰ ÁN]</div>
+<div style="border-left:1px solid #8C87C2"><sc-for list="{{ cs }}" as="c" hint-placeholder-count="4"><div style="padding:0 0 22px 16px;position:relative"><span style="position:absolute;left:-5px;top:3px;width:9px;height:9px;background:#F89018"></span><div style="font:500 11px 'IBM Plex Mono',monospace;color:#B9B5DC">{{ c.n }} → {{ c.k }}</div><div style="font:400 14.5px/1.6 'Public Sans',sans-serif;color:#E7E5F5;padding-top:6px">{{ c.t }}</div></div></sc-for></div>
+<div style="display:flex;flex-direction:column;border-top:1px solid #8C87C2">
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="3"><div style="padding:20px 0;border-bottom:1px solid #4A4380;display:flex;flex-direction:column;gap:10px"><div style="font:600 15px 'Public Sans',sans-serif">{{ r }}</div>
+<div style="display:flex;justify-content:space-between;font:400 13px 'Public Sans',sans-serif;color:#D2D0E6"><span>Đường cơ sở</span><span style="font-family:'IBM Plex Mono',monospace;color:#B9B5DC">[CASE DATA]</span></div>
+<div style="display:flex;justify-content:space-between;font:400 13px 'Public Sans',sans-serif;color:#D2D0E6"><span>Sau dự án</span><span style="font-family:'IBM Plex Mono',monospace;color:#B9B5DC">[CASE DATA]</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;font:600 13px 'Public Sans',sans-serif;border-top:1px solid #4A4380;padding-top:10px"><span style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;background:#F89018"></span>Mức thay đổi (Δ)</span><span style="font-family:'IBM Plex Mono',monospace;color:#fff">[CASE DATA]</span></div></div></sc-for></div>
+<sc-for list="{{ kpiLabels }}" as="k" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:6px"><div style="font:500 38px/1 'Newsreader',serif;color:{{ k.c }}">[CASE DATA]</div><div style="font:400 13px 'Public Sans',sans-serif;color:#D2D0E6">{{ k.l }}</div></div></sc-for>
+</div>
+
+<div style="padding:72px 20px 0;display:flex;flex-direction:column;gap:20px"><div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">KIẾN THỨC</div><div style="font:500 32px/1.12 'Newsreader',serif">Góc nhìn &amp; Tài liệu</div></div>
+<div style="border-top:2px solid #282058"><div style="padding:20px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:6px;min-height:72px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">BÀI PHÂN TÍCH</div><div style="font:600 17px/1.4 'Public Sans',sans-serif">[Tiêu đề bài viết]</div></div><div style="padding:20px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:6px;min-height:72px"><div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.1em;color:#0C5F98">HƯỚNG DẪN</div><div style="font:600 17px/1.4 'Public Sans',sans-serif">[Tiêu đề bài viết]</div></div><div style="background:#F6F5F2;padding:20px;display:flex;flex-direction:column;gap:8px;margin-top:8px"><div style="display:flex;align-items:center;gap:10px"><span style="width:10px;height:10px;background:#F89018"></span><span style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">TÀI LIỆU</span></div><div style="font:600 17px/1.35 'Public Sans',sans-serif">Checklist dữ liệu CBAM cho doanh nghiệp thép</div><div style="font:400 12px 'IBM Plex Mono',monospace;color:#5A5872">PDF + Excel</div><div style="font:600 14px 'Public Sans',sans-serif;border-bottom:2px solid #F89018;padding-bottom:2px;align-self:flex-start;min-height:44px;display:flex;align-items:center">Tải tài liệu →</div></div></div></div>
+
+<div style="margin-top:72px;background:#1078BF;color:#fff;padding:56px 20px;display:flex;flex-direction:column;gap:28px"><div style="font:500 38px/1.08 'Newsreader',serif;letter-spacing:-.015em">Nhà máy của bạn có thể giảm bao nhiêu phát thải?</div><div style="background:#fff;color:#282058;padding:16px;text-align:center;font:600 15px 'Public Sans',sans-serif;border-bottom:3px solid #F89018;min-height:48px">Đăng ký đánh giá sơ bộ</div></div>
+<div style="background:#282058;color:#D2D0E6;padding:44px 20px 24px;display:flex;flex-direction:column;gap:28px"><div style="background:#fff;padding:10px;align-self:flex-start"><img src="assets/leanwares-logo.jpg" style="height:56px;width:auto;display:block" alt="LEANWARES"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px"><sc-for list="{{ mega }}" as="m" hint-placeholder-count="4"><div style="font:400 13px/1.9 'Public Sans',sans-serif"><span style="color:#fff;font-weight:600;display:block">{{ m.t }}</span></div></sc-for></div>
+<div style="display:flex;flex-direction:column;border-top:1px solid #4A4380"><div style="min-height:48px;display:flex;align-items:center;border-bottom:1px solid #4A4380;font:400 13px 'Public Sans',sans-serif">Privacy</div><div style="min-height:48px;display:flex;align-items:center;border-bottom:1px solid #4A4380;font:400 13px 'Public Sans',sans-serif">Terms</div><div style="min-height:48px;display:flex;align-items:center;border-bottom:1px solid #4A4380;font:400 13px 'Public Sans',sans-serif">Cookie Policy</div></div><div style="font:400 11px 'IBM Plex Mono',monospace">© LEANWARES · Công ty Cổ phần LEANWARES</div></div>
+</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ind: 0 };
+  renderVals() {
+    const IND = ['Thép & kim loại', 'Gỗ & nội thất', 'Giấy & bao bì', 'Thực phẩm & nông nghiệp', 'Sản xuất công nghiệp', 'Khu công nghiệp'];
+    const steps = [
+      ['Đo lường', 'Thu thập dữ liệu năng lượng, nhiên liệu và vật liệu.'],
+      ['Phân tích', 'Quy đổi và kiểm tra dữ liệu phát thải.'],
+      ['Xác định điểm nóng', 'Chỉ ra nguồn và công đoạn phát thải lớn.'],
+      ['Xây dựng giải pháp', 'Đề xuất biện pháp giảm phát thải.'],
+      ['Ưu tiên đầu tư', 'Sắp xếp biện pháp theo hiệu quả và chi phí.'],
+      ['Triển khai', 'Thực hiện biện pháp tại nhà máy.'],
+      ['Theo dõi', 'Đo lường, kiểm chứng và báo cáo kết quả.']
+    ].map((x, i) => ({ n: String(i + 1).padStart(2, '0'), t: x[0], d: x[1], off: i * 30, moff: i * 4, bc: i < 3 ? '#1078BF' : '#282058', ph: i === 0 ? 'PHA 1 · PHÂN TÍCH CARBON' : i === 3 ? 'PHA 2 · HÀNH ĐỘNG GIẢM PHÁT THẢI' : '' }));
+    return {
+      rules: ['Chỉ khung GHG và dự án tiêu biểu dùng chú thích mono, bảng Baseline / Sau / Δ và biểu đồ kỹ thuật.', 'Các section còn lại là editorial: serif, đường kẻ, ảnh.', 'Nền sáng chủ đạo; navy chỉ ở trụ cột 2, case study, footer.', 'Nhãn kỹ thuật giảm còn nhãn eyebrow và chú thích dữ liệu (bỏ FIG, SOL, P-xx, mã ISO).', 'Mọi số liệu, tên dự án, ngày bài viết là [CASE DATA] / placeholder.', 'Chỉ dùng 8 nhóm giải pháp, 6 ngành, 4 nhóm menu trong brief.'],
+      nav: [['Trang chủ', ''], ['Giải pháp', 'border-bottom:2px solid #1078BF;padding-bottom:6px;color:#0C5F98'], ['Ngành', ''], ['Dự án', ''], ['Kiến thức', ''], ['Về LEANWARES', ''], ['Liên hệ', 'border:1px solid #282058;padding:8px 16px;margin-top:-9px']].map(x => ({ t: x[0], s: x[1] })),
+      questions: ['Sản phẩm phát thải bao nhiêu?', 'Nguyên liệu đến từ đâu?', 'Nhà máy đang giảm năng lượng thế nào?', 'Dữ liệu có thể kiểm chứng không?', 'Nhà cung cấp có đáp ứng yêu cầu ESG không?'].map((q, i) => ({ n: '0' + (i + 1), q })),
+      life: ['Nguyên liệu', 'Sản xuất', 'Vận chuyển', 'Sử dụng', 'Cuối vòng đời'].map((t, i) => ({ t, c: i === 0 ? '#F89018' : '#fff' })),
+      tiers: ['Nhà cung cấp cấp 1', 'Nhà cung cấp cấp 2', 'Nhà cung cấp cấp 3'].map((t, i) => ({ t, d: Array.from({ length: [4, 6, 8][i] }, () => ({})) })),
+      steps,
+      solutions: ['Hiệu quả năng lượng', 'Tối ưu quá trình', 'Chuyển đổi nhiên liệu', 'Năng lượng tái tạo', 'Sinh khối & than sinh học', 'Quản lý nước', 'Chất thải & tuần hoàn', 'Chuỗi cung ứng'].map((t, i) => ({ n: String(i + 1).padStart(2, '0'), t })),
+      industries: IND.map((t, i) => ({ t, on: () => this.setState({ ind: i }), bar: this.state.ind === i ? '#1078BF' : 'transparent', bg: this.state.ind === i ? '#fff' : 'transparent' })),
+      indImg: IND[this.state.ind],
+      steps1: steps.slice(0, 3), steps2: steps.slice(3),
+      cs: [['Thách thức'], ['Cách tiếp cận'], ['Giải pháp'], ['Kết quả']].map((x, i) => ({ n: '0' + (i + 1), k: x[0], t: '[CASE DATA] Nội dung ' + x[0].toLowerCase() + ' của dự án.' })),
+      rows: ['[CASE DATA] Chỉ số 1', '[CASE DATA] Chỉ số 2', '[CASE DATA] Chỉ số 3'],
+      kpiLabels: [{ l: 'Kết quả chính', c: '#F89018' }, { l: 'Kết quả bổ sung', c: '#fff' }],
+      articles: ['BÀI PHÂN TÍCH', 'HƯỚNG DẪN', 'CẬP NHẬT QUY ĐỊNH', 'GÓC NHÌN KỸ THUẬT'],
+      cross: [{ t: 'ESG & Phát triển bền vững', d: 'Chiến lược, dữ liệu, quản trị và báo cáo ESG.', cta: 'Xem tất cả giải pháp →' }, { t: 'Hệ thống quản lý & Tiêu chuẩn', d: 'Tư vấn xây dựng và triển khai các hệ thống quản lý theo tiêu chuẩn liên quan.', cta: 'Xem tất cả giải pháp →' }],
+      mega: [
+        { t: 'Nhà máy xanh', i: ['Hiệu quả năng lượng', 'Tối ưu quá trình', 'Nước', 'Chất thải', 'Phát thải'] },
+        { t: 'Sản phẩm xanh', i: ['Dấu chân carbon sản phẩm', 'Đánh giá vòng đời (LCA)', 'CBAM', 'Thiết kế sinh thái', 'Dữ liệu sản phẩm'] },
+        { t: 'Chuỗi cung ứng xanh', i: ['ESG nhà cung cấp', 'Phạm vi 3 (Scope 3)', 'Truy xuất nguồn gốc', 'EUDR', 'Nguồn cung bền vững'] },
+        { t: 'ESG & Hệ thống quản lý', i: ['ESG & Phát triển bền vững', 'Hệ thống quản lý', 'Tiêu chuẩn & Framework', 'Carbon', 'Dữ liệu'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

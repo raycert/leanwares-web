@@ -1,0 +1,30 @@
+/* Mobile (5u 390): 48 / 20 on the subtle surface. */
+.section {
+  padding-block: var(--space-48);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* Tablet / desktop (5u 1440): 4 / 8, 112px padding. */
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--section-space);
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    align-items: start;
+    gap: var(--column-gap);
+  }
+}

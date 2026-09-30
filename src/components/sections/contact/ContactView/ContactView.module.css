@@ -1,0 +1,140 @@
+/* Mobile (5j 390): hero → form → subtle "Sau khi bạn gửi" block. */
+.section {
+  padding-top: 36px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  margin-inline: calc(-1 * var(--page-margin));
+  margin-top: 12px;
+  padding: 44px var(--page-margin);
+}
+
+.stepsTitle {
+  padding-bottom: 14px;
+}
+
+.stepList {
+  border-left: var(--border-width-hairline) solid var(--color-border-strong);
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 0 0 var(--space-24) 22px;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.marker {
+  position: absolute;
+  top: 3px;
+  left: -6px;
+  width: 11px;
+  height: 11px;
+  background-color: var(--color-accent);
+}
+
+.stepLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  color: var(--color-text-muted);
+}
+
+.details {
+  border-top: var(--border-rule);
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-16);
+  min-height: 48px;
+  align-items: center;
+  border-bottom: var(--border-hairline);
+  font-size: var(--text-small-size);
+}
+
+.detail dt {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.detail dd {
+  margin: 0;
+  font-family: var(--font-mono);
+}
+
+/* Tablet: stacked like 390 (no 5j tablet board; a 5fr column is too narrow for the H1 at 768). */
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-64) 0;
+  }
+}
+
+/* Desktop (5j 1440): 5 / 7, 112px gap, 80 / 120px padding. */
+@media (min-width: 1024px) {
+  .section {
+    padding-bottom: var(--block-space);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-areas:
+      "intro form"
+      "aside form";
+    align-items: start;
+    column-gap: var(--column-gap);
+    row-gap: 44px;
+  }
+
+  .intro {
+    grid-area: intro;
+  }
+
+  .form {
+    grid-area: form;
+  }
+
+  /* The subtle block is a mobile treatment only (grid .aside outranks .surface-subtle). */
+  .grid .aside {
+    grid-area: aside;
+    gap: 44px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    padding-top: 80px;
+  }
+
+  .grid {
+    column-gap: 112px;
+  }
+
+  .intro {
+    gap: 22px;
+  }
+}

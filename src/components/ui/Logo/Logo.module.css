@@ -1,0 +1,35 @@
+.logo {
+  display: block;
+  flex: none;
+}
+
+.header {
+  height: var(--logo-height-header);
+}
+
+.compact {
+  height: var(--logo-height-compact);
+}
+
+.footer {
+  height: var(--logo-height-footer);
+}
+
+.image {
+  width: auto;
+}
+
+/* Placeholder: text in a dashed frame, visibly not a logo. */
+.fallback {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--space-12);
+  border: var(--border-width-hairline) dashed var(--color-border-input);
+  background-color: var(--color-surface);
+  color: var(--color-text-strong);
+  font-family: var(--font-mono);
+  font-size: var(--text-small-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--text-eyebrow-tracking);
+  white-space: nowrap;
+}

@@ -1,0 +1,406 @@
+.section {
+  padding-top: var(--section-space-lg);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+}
+
+.headTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.headAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  padding-top: var(--space-16);
+}
+
+.headAside:not(:has(a)) {
+  display: contents;
+}
+
+/* FD v3 shows the lead on desktop only. */
+.lead {
+  display: none;
+  max-width: 520px;
+}
+
+.marker {
+  display: inline-block;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin-right: var(--space-8);
+  background-color: var(--color-marker);
+}
+
+.baseline {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-strong);
+}
+
+.stepNumber {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.stepText {
+  color: var(--color-text);
+}
+
+/* ============ Desktop chart (≥ 1280 only) ============ */
+.chart {
+  display: none;
+}
+
+/* ============ Stacked: mobile timeline ============ */
+.stacked {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.stacked > .baseline {
+  margin: 0;
+}
+
+.phaseBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.phase1 {
+  --phase-color: var(--color-accent);
+}
+
+.phase2 {
+  --phase-color: var(--color-border-strong);
+}
+
+.phaseLabel {
+  padding: var(--space-12) 0 var(--space-16);
+  border-top: var(--border-width-active) solid var(--phase-color);
+}
+
+.phase1 .phaseLabel {
+  color: var(--color-text-accent);
+}
+
+.stackStep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: calc(var(--step) * 4px);
+  padding: 0 0 22px var(--space-16);
+  border-left: var(--border-width-hairline) solid var(--color-border-strong);
+}
+
+.stackStep::before {
+  content: "";
+  position: absolute;
+  top: var(--space-4);
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--phase-color);
+}
+
+.stackStep .stepTitle {
+  padding: 3px 0 var(--space-4);
+}
+
+.loopNote {
+  display: flex;
+  gap: var(--space-12);
+  padding: 14px var(--space-16);
+  border: var(--border-width-diagram) solid var(--color-marker);
+  color: var(--color-text-strong);
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-leading);
+}
+
+.loopIcon {
+  color: var(--color-marker);
+}
+
+.stackedSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: var(--space-12);
+  border-top: var(--border-width-hairline) dashed var(--color-border-strong);
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  color: var(--color-text-strong);
+}
+
+.summaryBaseline {
+  display: none;
+}
+
+.summaryDelta {
+  display: flex;
+  align-items: center;
+}
+
+/* ============ Tablet (FD v3 1024) ============ */
+@media (min-width: 768px) {
+  .inner {
+    gap: var(--space-32);
+  }
+
+  .headTitle {
+    gap: var(--space-16);
+    max-width: 760px;
+  }
+
+  .stacked {
+    gap: var(--space-32);
+  }
+
+  .phaseBlock {
+    gap: var(--space-16);
+    padding-top: 14px;
+    border-top: var(--border-width-active) solid var(--phase-color);
+  }
+
+  .phaseLabel {
+    padding: 0;
+    border-top: 0;
+  }
+
+  .phaseSteps {
+    display: grid;
+    gap: var(--space-24);
+    align-items: start;
+  }
+
+  .cols3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cols4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .stackStep {
+    gap: 6px;
+    margin-left: 0;
+    padding: var(--space-12) 0 0;
+    border-left: 0;
+    border-top: var(--border-rule-thin);
+  }
+
+  .stackStep::before {
+    display: none;
+  }
+
+  .stackStep .stepTitle {
+    padding: 0;
+  }
+
+  /* Phase 1 keeps the staircase offset (FD v3 tablet) */
+  .offsetStep {
+    margin-top: calc(var(--step) * 30px);
+  }
+
+  .loopNote {
+    padding: 14px 18px;
+  }
+
+  .stackedSummary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-24);
+    padding-top: 14px;
+    border-top: var(--border-hairline);
+  }
+
+  .summaryBaseline {
+    display: inline;
+  }
+
+  .stackedSummary .summaryDelta {
+    justify-content: flex-end;
+  }
+}
+
+/* ============ Desktop (FD v3 1440) ============ */
+@media (min-width: 1280px) {
+  .inner {
+    gap: 56px;
+  }
+
+  .head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+    gap: var(--column-gap);
+  }
+
+  .headTitle {
+    gap: 20px;
+    max-width: none;
+  }
+
+  .lead {
+    display: block;
+  }
+
+  .headAside {
+    padding-top: 0;
+  }
+
+  /* Template 5t: the feedback loop is an outlined note under the staircase. */
+  .chartNote {
+    margin-top: 56px;
+  }
+
+  .stacked {
+    display: none;
+  }
+
+  .chart {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chartTop {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 14px;
+  }
+
+  .axis {
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+  }
+
+  .phaseBar {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 4fr);
+    padding-block: var(--space-16) 6px;
+    border-top: var(--border-width-hairline) dashed var(--color-border-strong);
+  }
+
+  .phase {
+    padding: 14px var(--space-16) 0 0;
+    border-top: var(--border-width-active) solid var(--phase-color);
+  }
+
+  .phase1 {
+    margin-right: var(--space-8);
+  }
+
+  .phase2.phase {
+    margin-left: var(--space-8);
+  }
+
+  .phaseTitle {
+    padding-top: var(--space-4);
+    font-size: var(--text-title-m-size);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--text-title-l-leading);
+    color: var(--color-text-strong);
+  }
+
+  /* 7-step staircase: each step sits 30px lower than the previous one. */
+  .staircase {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: start;
+    border-bottom: var(--border-rule);
+  }
+
+  .stairStep {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    margin-top: calc(var(--step) * 30px);
+    padding-right: var(--space-16);
+  }
+
+  .stairStep .stepText {
+    padding-bottom: 18px;
+  }
+
+  .bar {
+    height: var(--space-4);
+    background-color: var(--color-accent);
+  }
+
+  .barPhase2 {
+    background-color: var(--color-border-strong);
+  }
+
+  /* Feedback loop: arc from the "Theo dõi" column back to "Đo lường" (column centres). */
+  .loop {
+    position: relative;
+    height: 84px;
+  }
+
+  .loopArc {
+    position: absolute;
+    top: 0;
+    left: calc(100% / 14);
+    right: calc(100% / 14);
+    height: 30px;
+    border: var(--border-width-diagram) solid var(--color-marker);
+    border-top: 0;
+  }
+
+  .loopArrow {
+    position: absolute;
+    top: -6px;
+    left: calc(100% / 14 - 5px);
+    color: var(--color-marker);
+    font-size: var(--text-data-size);
+    line-height: var(--text-metric-leading);
+  }
+
+  .loopText {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--color-text-strong);
+    font-size: var(--text-label-size);
+    line-height: var(--text-data-leading);
+  }
+
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-32);
+    padding-top: 18px;
+    border-top: var(--border-hairline);
+    font-family: var(--font-mono);
+    font-size: var(--text-data-size);
+    color: var(--color-text-strong);
+  }
+
+  .summary .summaryDelta {
+    justify-content: flex-end;
+  }
+}

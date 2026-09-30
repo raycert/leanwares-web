@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="padding:{{ pt }}px 96px 0;display:grid;grid-template-columns:4fr 8fr;gap:96px;font-family:'Public Sans',sans-serif;color:#282058;align-items:start">
+<div style="display:flex;flex-direction:column;gap:14px"><div style="font:500 {{ hs }}px/1.12 'Newsreader',serif;letter-spacing:-.015em">{{ title }}</div><div style="font:400 13px/1.6 'IBM Plex Mono',monospace;color:#5A5872">{{ note }}</div></div>
+<div style="border-top:2px solid #282058">
+<sc-if value="{{ hasPairs }}" hint-placeholder-val="{{ false }}"><div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 24px;gap:24px;padding:10px 0;border-bottom:1px solid #282058;font:500 11px 'IBM Plex Mono',monospace;color:#5A5872"><span>{{ h1 }}</span><span>{{ h2 }}</span><span></span></div>
+<sc-for list="{{ pairs }}" as="p" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 24px;gap:24px;padding:20px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:600 18px/1.35 'Public Sans',sans-serif">{{ p.a }}</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font:500 16px 'IBM Plex Mono',monospace;color:#0C5F98">{{ p.b }}</span><span style="font:400 13.5px/1.55 'Public Sans',sans-serif;color:#4A4766">{{ p.c }}</span></span><span style="color:#0C5F98">→</span></div></sc-for></sc-if>
+<sc-if value="{{ hasInline }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:12px 32px;padding:22px 0;border-bottom:1px solid #D9D6CF"><sc-for list="{{ inline }}" as="i" hint-placeholder-count="3"><span tabindex="0" style="font:500 18px 'IBM Plex Mono',monospace;color:#0C5F98;border-bottom:1px solid #0C5F98;padding-bottom:2px;min-height:24px" style-focus="outline:2px solid #1078BF;outline-offset:3px">{{ i }}</span></sc-for></div>
+<div style="padding:16px 0;border-bottom:1px solid #D9D6CF;font:600 14px 'Public Sans',sans-serif">{{ link }} <span style="color:#0C5F98">→</span></div></sc-if>
+</div></div>
+</sc-if>
+<sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+<div style="padding:{{ ptm }}px 20px 0;display:flex;flex-direction:column;gap:14px;font-family:'Public Sans',sans-serif;color:#282058">
+<div style="font:500 26px/1.15 'Newsreader',serif">{{ title }}</div><div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#5A5872">{{ note }}</div>
+<div style="border-top:2px solid #282058">
+<sc-if value="{{ hasPairs }}" hint-placeholder-val="{{ false }}"><sc-for list="{{ pairs }}" as="p" hint-placeholder-count="2"><div style="padding:16px 0;border-bottom:1px solid #D9D6CF;display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:64px"><span style="display:flex;flex-direction:column;gap:5px"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#5A5872">{{ h1 }}</span><span style="font:600 16px/1.35 'Public Sans',sans-serif">{{ p.a }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#5A5872;padding-top:4px">{{ h2 }}</span><span style="font:500 15px 'IBM Plex Mono',monospace;color:#0C5F98">{{ p.b }}</span><span style="font:400 13px/1.55 'Public Sans',sans-serif;color:#4A4766">{{ p.c }}</span></span><span style="color:#0C5F98">→</span></div></sc-for></sc-if>
+<sc-if value="{{ hasInline }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:16px 0;border-bottom:1px solid #D9D6CF"><sc-for list="{{ inline }}" as="i" hint-placeholder-count="3"><span tabindex="0" style="min-height:44px;display:flex;align-items:center;font:500 16px 'IBM Plex Mono',monospace;color:#0C5F98;border-bottom:1px solid #0C5F98" style-focus="outline:2px solid #1078BF;outline-offset:2px">{{ i }}</span></sc-for></div>
+<div style="min-height:52px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #D9D6CF;font:600 14px 'Public Sans',sans-serif"><span>{{ link }}</span><span style="color:#0C5F98">→</span></div></sc-if>
+</div></div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:320},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;service&quot;,&quot;options&quot;:[&quot;service&quot;,&quot;industry&quot;,&quot;project&quot;,&quot;resource&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.variant || 'service', m = !!this.props.mobile;
+    const C = {
+      service: { title: 'Tiêu chuẩn & Framework áp dụng', note: 'Dịch vụ là phần LEANWARES cung cấp. Tiêu chuẩn là tài liệu tham chiếu.', h1: 'DỊCH VỤ LEANWARES', h2: 'TIÊU CHUẨN / FRAMEWORK', pairs: [{ a: 'Tư vấn xây dựng ISO 50001', b: 'ISO 50001:2018', c: 'Xem giải thích tiêu chuẩn trong Thư viện' }, { a: '[NỘI DUNG] Dịch vụ', b: '[NỘI DUNG] Tiêu chuẩn', c: 'ISO 50002 · ISO 50006 · ISO 50015 chỉ hiển thị khi được phê duyệt' }], pt: 120, ptm: 56 },
+      industry: { title: 'Tiêu chuẩn & yêu cầu thường gặp', note: 'Tham chiếu theo ngành. Không phải danh mục dịch vụ.', h1: 'TIÊU CHUẨN / YÊU CẦU', h2: 'ĐIỀU NGÀNH THƯỜNG GẶP', pairs: ['ISO 14064-1', 'ISO 50001', 'ISO 14067', 'CBAM'].map(b => ({ a: '[NỘI DUNG] Vì sao ngành cần', b, c: '' })), pt: 104, ptm: 48 },
+      project: { title: 'Tiêu chuẩn / Framework áp dụng', note: 'Nếu chưa có dữ liệu: [CASE DATA]', inline: ['ISO 14064-1', 'ISO 50001', 'GHG Protocol'], link: 'Xem trong Thư viện Tiêu chuẩn & Framework', pt: 0, ptm: 0 },
+      resource: { title: 'Tiêu chuẩn / Framework liên quan', note: 'Liên kết tới Thư viện Tiêu chuẩn & Framework.', inline: ['ISO 14067', 'GHG Protocol', 'CBAM'], link: 'Xem trong Thư viện Tiêu chuẩn & Framework', pt: 104, ptm: 48 }
+    };
+    const c = C[v] || C.service;
+    if (v === 'industry') c.pairs = c.pairs.map(p => ({ ...p, c: '[NỘI DUNG]' }));
+    return { desktop: !m, mobile: m, title: c.title, note: c.note, h1: c.h1 || '', h2: c.h2 || '', pairs: c.pairs || [], hasPairs: !!c.pairs, inline: c.inline || [], hasInline: !!c.inline, link: c.link || '', pt: c.pt, ptm: c.ptm, hs: v === 'project' ? 28 : 36 };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* 5t: the project teaser sits 144 / 104 / 56px below the GHG framework. */
+.project {
+  margin-top: 56px;
+}
+
+@media (min-width: 768px) {
+  .project {
+    margin-top: var(--section-space-lg);
+  }
+}

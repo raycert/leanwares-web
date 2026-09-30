@@ -1,0 +1,12 @@
+/* The case-structure band sits between the hero and the featured project. */
+.method {
+  padding-top: 0;
+}
+
+.featured {
+  margin-top: var(--section-space);
+}
+
+.cta {
+  margin-top: var(--section-space);
+}

@@ -1,0 +1,126 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label,
+.checkLabel {
+  font-size: var(--text-small-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-ui-leading);
+  color: var(--surface-text-strong);
+}
+
+.optional {
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+
+.control {
+  width: 100%;
+  min-height: var(--control-height-touch);
+  padding: 0 14px;
+  border: var(--border-width-hairline) solid var(--color-border-input);
+  border-radius: 0;
+  background-color: var(--color-surface);
+  color: var(--color-text-strong);
+  font: inherit;
+  font-size: var(--text-body-size);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+textarea.control {
+  min-height: 120px;
+  padding-block: 14px;
+  line-height: var(--text-body-leading);
+  resize: vertical;
+}
+
+select.control {
+  appearance: none;
+  padding-right: 40px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-text-strong) 50%),
+    linear-gradient(135deg, var(--color-text-strong) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 15px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.control::placeholder {
+  color: var(--color-text-subtle);
+}
+
+/* DS V3 focus: 2px blue border + ring. */
+.control:focus-visible {
+  border-color: var(--color-accent);
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+
+/* DS V3 error: strong border + 4px orange bar on the left, message in text. */
+.invalid .control {
+  border-color: var(--color-border-strong);
+  border-left: var(--border-error);
+  padding-left: 11px;
+}
+
+.hint {
+  font-size: var(--text-data-size);
+  color: var(--color-text-muted);
+}
+
+.error {
+  padding-left: var(--space-12);
+  border-left: var(--border-error);
+  font-size: var(--text-small-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-ui-leading);
+  color: var(--color-text-strong);
+}
+
+.checkField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.checkRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+.checkbox {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  accent-color: var(--color-text-strong);
+}
+
+.checkLabel {
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-body-leading);
+  color: var(--color-text);
+}
+
+.notice {
+  padding: var(--space-12) var(--space-16);
+  border-left: var(--border-error);
+  background-color: var(--color-surface-subtle);
+  font-size: var(--text-small-size);
+  line-height: var(--text-body-leading);
+  color: var(--color-text-strong);
+}
+
+.notice-info {
+  border-left-color: var(--color-accent);
+}
+
+.notice-success {
+  border-left: var(--border-width-error) solid var(--color-accent);
+}

@@ -1,0 +1,138 @@
+/* Moved unchanged from FeaturedProject (FD v3); shared with the case-study results (5f). */
+
+.muted {
+  color: var(--surface-text-muted);
+}
+
+.deltaMarker {
+  display: inline-block;
+  flex: none;
+  width: var(--marker-size-sm);
+  height: var(--marker-size-sm);
+  background-color: var(--color-marker);
+}
+
+/* < 768: stacked cards, table hidden */
+.table {
+  display: none;
+}
+
+.cards {
+  border-top: var(--border-width-hairline) solid var(--color-border-inverse-strong);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-block: 20px;
+  border-bottom: var(--border-width-hairline) solid var(--color-border-inverse);
+}
+
+.cardTitle {
+  color: var(--surface-text-strong);
+  font-size: var(--text-link-size);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card dl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-12);
+  font-size: var(--text-label-size);
+}
+
+.cardRow dd {
+  margin: 0;
+  font-family: var(--font-mono);
+}
+
+.cardDelta {
+  padding-top: 10px;
+  border-top: var(--border-width-hairline) solid var(--color-border-inverse);
+  font-weight: var(--font-weight-semibold);
+}
+
+.cardDelta dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cardDelta dd {
+  color: var(--surface-text-strong);
+}
+
+@media (min-width: 768px) {
+  .cards {
+    display: none;
+  }
+
+  .table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-top: var(--border-width-hairline) solid var(--color-border-inverse-strong);
+    font-family: var(--font-mono);
+    font-size: var(--text-data-table-size);
+    color: var(--surface-text-strong);
+  }
+
+  .table th,
+  .table td {
+    padding: 14px 0;
+    font-weight: var(--font-weight-regular);
+    text-align: right;
+  }
+
+  .table tbody tr {
+    border-bottom: var(--border-width-hairline) solid var(--color-border-inverse);
+  }
+
+  .table tbody th {
+    width: 40%;
+    font-family: var(--font-sans);
+    text-align: left;
+  }
+
+  .table thead th {
+    padding-block: 10px;
+    border-bottom: var(--border-width-hairline) solid var(--color-border-inverse-strong);
+    font-size: var(--text-data-size);
+    color: var(--surface-text-muted);
+    text-transform: uppercase;
+  }
+
+  .table thead th:first-child {
+    text-align: left;
+  }
+
+  .delta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .table {
+    border-top: 0;
+  }
+
+  .table th,
+  .table td {
+    padding-block: var(--space-16);
+  }
+
+  .table tbody th {
+    font-family: var(--font-mono);
+  }
+}

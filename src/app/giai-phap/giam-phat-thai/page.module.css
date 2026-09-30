@@ -1,0 +1,4 @@
+/* Section rhythm (DS V3 section spacing): bands after open sections start one section-space down. */
+.spaced {
+  margin-top: var(--section-space);
+}

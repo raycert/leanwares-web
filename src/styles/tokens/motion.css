@@ -1,0 +1,23 @@
+/*
+ * Motion tokens. Source: Design System V3 Final §08 interaction notes and accessibility.
+ * No parallax. prefers-reduced-motion removes transitions and movement.
+ */
+
+:root {
+  --duration-fast: 150ms; /* colour changes on buttons and links */
+  --duration-image: 200ms; /* industry image crossfade */
+  --delay-menu-open: 150ms; /* mega menu opens after hover */
+  --delay-menu-close: 250ms; /* mega menu closes after leaving */
+  --ease-standard: ease-out;
+  --motion-arrow-shift: 4px; /* arrow → nudges right on hover */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0.01ms;
+    --duration-image: 0.01ms;
+    --delay-menu-open: 0ms;
+    --delay-menu-close: 0ms;
+    --motion-arrow-shift: 0px;
+  }
+}

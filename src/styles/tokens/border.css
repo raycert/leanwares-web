@@ -1,0 +1,34 @@
+/*
+ * Border, radius and focus tokens. Source: Design System V3 Final (components, a11y).
+ * Corners are square everywhere; the only exception is the 2px top edge of mobile
+ * bottom sheets.
+ */
+
+:root {
+  /* Widths */
+  --border-width-hairline: 1px;
+  --border-width-rule: 2px;
+  --border-width-active: 3px;
+  --border-width-error: 4px;
+  --border-width-diagram: 1.5px; /* concept diagrams: supplier tiers, GHG feedback loop */
+
+  /* Composite borders */
+  --border-hairline: var(--border-width-hairline) solid var(--color-border);
+  --border-hairline-soft: var(--border-width-hairline) solid var(--color-border-soft);
+  --border-rule: var(--border-width-rule) solid var(--color-border-strong);
+  --border-rule-thin: var(--border-width-hairline) solid var(--color-border-strong);
+  --border-active: var(--border-width-active) solid var(--color-accent);
+  --border-marker: var(--border-width-rule) solid var(--color-marker);
+  --border-marker-heavy: var(--border-width-active) solid var(--color-marker);
+  --border-error: var(--border-width-error) solid var(--color-feedback-error-bar);
+
+  /* Radius */
+  --radius-none: 0;
+  --radius-sheet: 2px 2px 0 0;
+
+  /* Focus-visible ring. --focus-ring-color is re-pointed by inverse/accent surfaces
+     (see src/styles/surfaces.css). */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 3px;
+  --focus-ring-color: var(--color-focus);
+}

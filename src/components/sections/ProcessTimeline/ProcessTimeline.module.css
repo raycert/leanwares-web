@@ -1,0 +1,25 @@
+.section {
+  padding-top: var(--section-space);
+}
+
+.band {
+  padding-block: var(--section-space);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    gap: 44px;
+  }
+}

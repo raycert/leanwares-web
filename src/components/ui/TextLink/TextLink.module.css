@@ -1,0 +1,79 @@
+/* Shared */
+.link {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.md {
+  font-size: var(--text-link-size);
+}
+
+.sm {
+  font-size: var(--text-link-size-sm);
+}
+
+.lg {
+  font-size: var(--text-link-size);
+}
+
+@media (min-width: 1280px) {
+  .lg {
+    font-size: var(--text-button-size-lg);
+  }
+}
+
+.arrow {
+  display: inline-block;
+  margin-inline-start: 0.35em;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.link:hover .arrow {
+  transform: translateX(var(--motion-arrow-shift));
+}
+
+/* Standalone variants: the underline is a border so it sits 3px below the text. */
+.accent,
+.quiet {
+  display: inline-flex;
+  align-items: baseline;
+  align-self: flex-start;
+  color: var(--surface-text-strong);
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+
+.accent {
+  border-bottom: var(--border-marker);
+}
+
+.accent:hover {
+  color: var(--surface-link-emphasis-hover);
+  border-bottom-color: var(--surface-link-emphasis-hover);
+}
+
+.quiet {
+  border-bottom: var(--border-width-hairline) solid var(--surface-outline);
+}
+
+.quiet:hover {
+  color: var(--surface-link-emphasis-hover);
+  border-bottom-color: var(--surface-link-emphasis-hover);
+}
+
+/* Inline variant: inherits the prose link treatment from base.css */
+.inline {
+  font-weight: inherit;
+  font-size: inherit;
+  color: var(--surface-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.inline:hover {
+  color: var(--surface-link-hover);
+}

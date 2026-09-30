@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-4) 10px;
+  font-size: var(--text-label-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-data-leading);
+  color: var(--surface-text);
+}
+
+.item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.item + .item::before {
+  content: "/";
+  color: var(--surface-text-muted);
+}
+
+.link {
+  color: var(--surface-link);
+}
+
+.current {
+  color: var(--surface-text-strong);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Mobile boards start at the section ("Giải pháp / …"). */
+@media (max-width: 767.98px) {
+  .first {
+    display: none;
+  }
+
+  .first + .item::before {
+    content: none;
+  }
+}

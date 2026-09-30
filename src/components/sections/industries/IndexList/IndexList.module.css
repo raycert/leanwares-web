@@ -1,0 +1,143 @@
+/* Mobile (5e / 5u 390): stacked rows, 2px navy rule on top. */
+.list {
+  border-top: var(--border-rule);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 4px var(--space-8);
+  min-height: 56px;
+  padding-block: 14px;
+  border-bottom: var(--border-hairline);
+  color: inherit;
+  text-decoration: none;
+}
+
+.link {
+  grid-template-columns: 36px minmax(0, 1fr) 24px;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.link:hover {
+  color: inherit;
+  background-color: var(--color-surface-subtle);
+}
+
+.link:focus-visible {
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+.marker {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--surface-text-accent);
+}
+
+.title {
+  grid-column: 2;
+}
+
+.description {
+  grid-column: 2;
+  color: var(--surface-text-muted);
+}
+
+.arrow {
+  grid-column: 3;
+  grid-row: 1;
+  color: var(--surface-text-accent);
+  text-align: right;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.link:hover .arrow {
+  transform: translateX(var(--motion-arrow-shift));
+}
+
+/* Standards codes: marker on its own line so long codes never squeeze the title. */
+.codes .row {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.codes .title,
+.codes .description {
+  grid-column: 1;
+}
+
+.columns .row {
+  align-items: center;
+}
+
+/* Tablet: more air, same stacked rows (the 8fr track is too narrow for three columns). */
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 20px;
+    padding-block: 20px;
+  }
+
+  .link {
+    grid-template-columns: 44px minmax(0, 1fr) 24px;
+  }
+
+  .codes .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .columns .row {
+    gap: var(--space-12);
+    min-height: 72px;
+    padding-block: var(--space-12);
+  }
+}
+
+/* Desktop (5e 1440): marker | title | description | →, 26px rows. */
+@media (min-width: 1024px) {
+  .rows .row,
+  .codes .row {
+    grid-template-columns: 44px minmax(0, 2fr) minmax(0, 3fr);
+    padding-block: 26px;
+  }
+
+  .rows .link,
+  .codes .link {
+    grid-template-columns: 44px minmax(0, 2fr) minmax(0, 3fr) 24px;
+  }
+
+  .codes .row {
+    grid-template-columns: 120px minmax(0, 2fr) minmax(0, 3fr);
+  }
+
+  .codes .link {
+    grid-template-columns: 120px minmax(0, 2fr) minmax(0, 3fr) 24px;
+  }
+
+  .rows .title,
+  .codes .title {
+    grid-column: 2;
+  }
+
+  .rows .description,
+  .codes .description {
+    grid-column: 3;
+  }
+
+  .rows .arrow,
+  .codes .arrow {
+    grid-column: 4;
+  }
+
+  /* 5u: two columns, 84px rows. */
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 56px;
+  }
+
+  .columns .row {
+    min-height: 84px;
+  }
+}

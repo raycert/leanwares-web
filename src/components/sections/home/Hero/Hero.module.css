@@ -1,0 +1,72 @@
+/* Mobile (FD v3 390): stacked copy, then the image; buttons full width. */
+.hero {
+  padding-block: 44px 0;
+}
+
+.grid {
+  row-gap: 40px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lead {
+  max-width: 620px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.actions .secondaryLink {
+  display: none;
+}
+
+/* Tablet (FD v3 1024): 7 / 5; CTAs stacked, left aligned. */
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 72px 64px;
+  }
+
+  .copy {
+    gap: 26px;
+    padding-top: var(--space-8);
+  }
+
+  .actions {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .actions .secondaryLink {
+    display: inline-flex;
+  }
+
+  .actions .secondaryButton {
+    display: none;
+  }
+}
+
+/* Desktop (FD v3 1440): CTAs side by side. */
+@media (min-width: 1280px) {
+  .hero {
+    padding-block: 104px 80px;
+  }
+
+  .copy {
+    gap: var(--space-32);
+    padding-top: var(--space-16);
+  }
+
+  .actions {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-32);
+    padding-top: var(--space-8);
+  }
+}

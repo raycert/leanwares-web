@@ -1,0 +1,23 @@
+.skipLink {
+  position: absolute;
+  top: var(--space-12);
+  left: var(--space-12);
+  z-index: calc(var(--z-overlay) + 1);
+  padding: 6px var(--space-24);
+  background-color: var(--color-surface-inverse);
+  color: var(--color-text-inverse-strong);
+  font-family: var(--font-sans);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus-visible {
+  transform: none;
+  outline-color: var(--color-focus);
+}
+
+.skipLink:hover {
+  color: var(--color-text-inverse-strong);
+}

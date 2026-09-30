@@ -1,0 +1,70 @@
+/*
+ * Surface contexts. A section declares its background with one of these classes; the
+ * contextual --surface-* tokens re-point so primitives (Eyebrow, Button, TextLink, type
+ * roles) render correctly on light, off-white, navy and blue backgrounds without
+ * per-component overrides.
+ *
+ * Navy surfaces are reserved for pillar 2, case study / featured project and the footer
+ * (DESIGN_HANDOFF §C1). The blue surface is the CTA band.
+ */
+
+:root,
+.surface-default {
+  --surface-bg: var(--color-surface);
+  --surface-text-strong: var(--color-text-strong);
+  --surface-text: var(--color-text);
+  --surface-text-muted: var(--color-text-muted);
+  --surface-text-accent: var(--color-text-accent);
+  --surface-border: var(--color-border);
+  --surface-rule: var(--color-border-strong);
+  --surface-outline: var(--color-border-strong); /* secondary button, outlined controls */
+  --surface-link: var(--color-text-link);
+  --surface-link-hover: var(--color-text-link-hover);
+  --surface-link-emphasis-hover: var(--color-accent-hover);
+  --focus-ring-color: var(--color-focus);
+}
+
+.surface-default {
+  background-color: var(--surface-bg);
+  color: var(--surface-text);
+}
+
+.surface-subtle {
+  --surface-bg: var(--color-surface-subtle);
+  background-color: var(--surface-bg);
+  color: var(--surface-text);
+}
+
+.surface-inverse {
+  --surface-bg: var(--color-surface-inverse);
+  --surface-text-strong: var(--color-text-inverse-strong);
+  --surface-text: var(--color-text-inverse);
+  --surface-text-muted: var(--color-text-inverse-muted);
+  --surface-text-accent: var(--color-marker); /* FD v3: eyebrow on navy is orange (6.3:1) */
+  --surface-border: var(--color-border-inverse);
+  --surface-rule: var(--color-border-inverse-strong);
+  --surface-outline: var(--color-text-inverse-strong);
+  --surface-link: var(--color-text-inverse-strong);
+  --surface-link-hover: var(--color-text-inverse-high);
+  --surface-link-emphasis-hover: var(--color-text-inverse-high);
+  --focus-ring-color: var(--color-focus-inverse);
+  background-color: var(--surface-bg);
+  color: var(--surface-text);
+}
+
+.surface-accent {
+  --surface-bg: var(--color-surface-accent);
+  --surface-text-strong: var(--color-text-on-accent);
+  --surface-text: var(--color-text-on-accent);
+  --surface-text-muted: var(--color-text-on-accent);
+  --surface-text-accent: var(--color-text-on-accent);
+  --surface-border: var(--color-text-on-accent);
+  --surface-rule: var(--color-text-on-accent);
+  --surface-outline: var(--color-text-on-accent);
+  --surface-link: var(--color-text-on-accent);
+  --surface-link-hover: var(--color-text-on-accent);
+  --surface-link-emphasis-hover: var(--color-text-on-accent);
+  --focus-ring-color: var(--color-focus-inverse);
+  background-color: var(--surface-bg);
+  color: var(--surface-text);
+}

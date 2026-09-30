@@ -1,0 +1,52 @@
+.band {
+  padding-block: var(--block-space);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.button {
+  align-self: stretch;
+}
+
+/* Tablet: stacked, title max 800 (FD v3 1024) */
+@media (min-width: 768px) {
+  .inner {
+    gap: var(--space-32);
+  }
+
+  .home .title {
+    max-width: 800px;
+  }
+
+  .button {
+    align-self: flex-start;
+  }
+}
+
+/* Desktop: 8 / 4 split, button aligned to the title's baseline row (FD v3 1440, LWCtaBand) */
+@media (min-width: 1280px) {
+  .inner {
+    display: grid;
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    align-items: end;
+    gap: var(--column-gap);
+  }
+
+  .home .title {
+    max-width: none;
+  }
+
+  .button {
+    align-self: end;
+    justify-self: start;
+  }
+
+  .default {
+    padding-block: 104px;
+  }
+}

@@ -1,0 +1,101 @@
+/* Mobile (5f 390) */
+.section {
+  margin-top: 48px;
+  padding-block: 48px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-12);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--surface-text-muted);
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.tableBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.evidence {
+  color: var(--surface-text-muted);
+}
+
+/* Verified data only */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.barGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.barPair {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-12);
+  height: 180px;
+}
+
+.barBefore,
+.barAfter {
+  flex: 1;
+  height: calc(var(--h) * 100%);
+}
+
+.barBefore {
+  background-color: var(--color-border-inverse);
+}
+
+.barAfter {
+  background-color: var(--color-border-inverse-strong);
+  border-top: var(--border-marker-heavy);
+}
+
+@media (min-width: 768px) {
+  .section {
+    margin-top: var(--section-space);
+    padding-block: var(--block-space);
+  }
+
+  .inner {
+    gap: 56px;
+  }
+
+  .head {
+    gap: var(--space-16);
+  }
+}
+
+/* Desktop (5f 1440): table 7 / bars 5, gap 80, only when verified bars exist;
+   otherwise the table uses the full width. */
+@media (min-width: 1280px) {
+  .withBars {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 80px;
+  }
+}

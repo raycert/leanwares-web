@@ -1,0 +1,78 @@
+.prose {
+  max-width: var(--measure-prose);
+}
+
+/* Subtle-surface section (5e "Yêu cầu thị trường và quy định"): padded on both sides. */
+.subtle {
+  margin-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* RelatedContent sits between two SplitSections: keep the 5e 120 / 48px rhythm. */
+.related {
+  padding-bottom: 0;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+
+.empty {
+  padding-block: var(--space-16);
+  border-top: var(--border-rule);
+  color: var(--surface-text-muted);
+}
+
+/* 5e "Các ngành khác": mobile rows (390), inline links from 768 (1440). */
+.others {
+  padding-block: 48px 56px;
+}
+
+.othersInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.othersList {
+  display: flex;
+  flex-direction: column;
+}
+
+.othersList li {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  border-top: var(--border-hairline);
+}
+
+@media (min-width: 768px) {
+  .subtle {
+    margin-top: var(--section-space);
+    padding-bottom: var(--section-space);
+  }
+
+  .others {
+    padding-block: var(--section-space) var(--block-space);
+  }
+
+  .othersInner {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    align-items: start;
+    gap: var(--column-gap);
+  }
+
+  .othersList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-16) 40px;
+  }
+
+  .othersList li {
+    min-height: 0;
+    border-top: 0;
+  }
+}

@@ -1,0 +1,97 @@
+/* compact: moved unchanged from FeaturedProject (FD v3) */
+.kpis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compact .emphasis {
+  color: var(--color-marker);
+}
+
+.label {
+  font-size: var(--text-label-size);
+}
+
+/* large (5f): every KPI on its own rule, marker square before the figure */
+.large {
+  gap: 0;
+}
+
+.large .kpi {
+  padding-top: 14px;
+  border-top: var(--border-width-hairline) solid var(--color-border-inverse-strong);
+}
+
+.large .kpi + .kpi {
+  margin-top: 28px;
+}
+
+.large .value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marker {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  background-color: var(--color-text-inverse-strong);
+}
+
+.large .emphasis .marker {
+  background-color: var(--color-marker);
+}
+
+.large .label {
+  font-size: var(--text-small-size);
+}
+
+@media (min-width: 768px) {
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-32);
+  }
+
+  .kpi {
+    gap: var(--space-8);
+  }
+
+  .label {
+    font-size: var(--text-small-size);
+  }
+
+  .large {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-48);
+  }
+
+  .large .kpi {
+    padding-top: 20px;
+  }
+
+  .large .kpi + .kpi {
+    margin-top: 0;
+  }
+
+  .large .value {
+    gap: var(--space-12);
+  }
+
+  .large .marker {
+    width: var(--marker-size);
+    height: var(--marker-size);
+  }
+
+  .large .label {
+    font-size: var(--text-body-s-size);
+  }
+}

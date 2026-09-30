@@ -1,0 +1,52 @@
+.section {
+  padding-top: var(--space-64);
+}
+
+.list {
+  border-top: var(--border-rule);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-block: var(--space-32);
+  border-bottom: var(--border-hairline);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-accent);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  max-width: var(--measure-prose);
+}
+
+.placeholder {
+  padding-left: var(--space-12);
+  border-left: var(--border-width-rule) solid var(--color-border);
+}
+
+/* 4 / 8 rows from 768 (the 5d / 5e "4fr 8fr" section rhythm). */
+@media (min-width: 768px) {
+  .group {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    align-items: start;
+    gap: var(--column-gap);
+    padding-block: 40px;
+  }
+}

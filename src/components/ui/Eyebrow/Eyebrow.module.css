@@ -1,0 +1,36 @@
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* Doubled class beats the global .t-eyebrow colour regardless of stylesheet order. */
+.eyebrow.accent {
+  color: var(--surface-text-accent);
+}
+
+.eyebrow.muted {
+  color: var(--surface-text-muted);
+}
+
+.eyebrow.body {
+  color: var(--surface-text);
+}
+
+.eyebrow.strong {
+  color: var(--surface-text-strong);
+}
+
+.marker {
+  flex: none;
+  width: var(--marker-size);
+  height: var(--marker-size);
+}
+
+.marker-orange {
+  background-color: var(--color-marker);
+}
+
+.marker-blue {
+  background-color: var(--color-accent);
+}

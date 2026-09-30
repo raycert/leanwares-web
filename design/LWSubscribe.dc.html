@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="background:#F6F5F2;padding:72px 96px;display:grid;grid-template-columns:5fr 7fr;gap:96px;border-top:2px solid #282058;font-family:'Public Sans',sans-serif;color:#282058">
+<div style="display:flex;flex-direction:column;gap:16px"><div style="font:500 36px/1.15 'Newsreader',serif;letter-spacing:-.01em">Nhận cập nhật chuyên môn từ LEANWARES</div><div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766">Các cập nhật đáng chú ý về CBAM, GHG, năng lượng, ESG và chuyển đổi xanh cho doanh nghiệp sản xuất.</div></div>
+<div style="display:flex;flex-direction:column;gap:22px"><div style="display:flex;flex-direction:column;gap:6px"><span style="font:600 13px 'Public Sans',sans-serif">Email</span><span style="min-height:52px;background:#fff;border:1px solid #8B88A6;padding:0 14px;display:flex;align-items:center;font:400 15px 'Public Sans',sans-serif;color:#6E6C86">ten@congty.vn</span></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:600 13px 'Public Sans',sans-serif">Chủ đề quan tâm</span><div style="display:flex;flex-wrap:wrap;gap:10px"><sc-for list="{{ topics }}" as="t" hint-placeholder-count="6"><span style="min-height:44px;padding:0 16px;display:flex;align-items:center;gap:8px;font:500 14px 'Public Sans',sans-serif;background:{{ t.bg }};border:1px solid {{ t.bd }}"><span style="width:10px;height:10px;background:{{ t.mk }}"></span>{{ t.t }}</span></sc-for></div></div>
+<div style="display:flex;gap:20px;align-items:center"><div style="background:#1078BF;color:#fff;min-height:52px;padding:0 30px;display:flex;align-items:center;font:600 15px 'Public Sans',sans-serif">Đăng ký nhận cập nhật</div><span style="font:400 12px 'Public Sans',sans-serif;color:#5A5872">Hủy đăng ký bất kỳ lúc nào</span></div></div>
+</div>
+</sc-if>
+<sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+<div style="background:#F6F5F2;padding:44px 20px;display:flex;flex-direction:column;gap:20px;border-top:2px solid #282058;font-family:'Public Sans',sans-serif;color:#282058">
+<div style="font:500 28px/1.15 'Newsreader',serif">Nhận cập nhật chuyên môn từ LEANWARES</div><div style="font:400 14px/1.65 'Public Sans',sans-serif;color:#4A4766">Các cập nhật đáng chú ý về CBAM, GHG, năng lượng, ESG và chuyển đổi xanh cho doanh nghiệp sản xuất.</div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:600 13px 'Public Sans',sans-serif">Email</span><span style="min-height:52px;background:#fff;border:1px solid #8B88A6;padding:0 14px;display:flex;align-items:center;font:400 15px 'Public Sans',sans-serif;color:#6E6C86">ten@congty.vn</span></div>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:600 13px 'Public Sans',sans-serif">Chủ đề quan tâm</span><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ topics }}" as="t" hint-placeholder-count="6"><span style="min-height:48px;padding:0 14px;display:flex;align-items:center;gap:8px;font:500 14px 'Public Sans',sans-serif;background:{{ t.bg }};border:1px solid {{ t.bd }}"><span style="width:10px;height:10px;background:{{ t.mk }}"></span>{{ t.t }}</span></sc-for></div></div>
+<div style="background:#1078BF;color:#fff;min-height:52px;display:flex;align-items:center;justify-content:center;font:600 15px 'Public Sans',sans-serif">Đăng ký nhận cập nhật</div></div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:320},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const m = !!this.props.mobile;
+    return { mobile: m, desktop: !m, topics: ['CBAM', 'GHG', 'Năng lượng', 'ESG', 'EUDR', 'Nhà máy xanh'].map((t, i) => { const on = i === 0 || i === 3; return { t, bg: on ? '#fff' : 'transparent', bd: on ? '#1078BF' : '#8B88A6', mk: on ? '#1078BF' : 'transparent' }; }) };
+  }
+}
+</script>
+</body>
+</html>

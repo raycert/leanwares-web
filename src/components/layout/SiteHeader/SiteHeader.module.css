@@ -1,0 +1,112 @@
+/* < 1024: 68px, not sticky (V1). */
+.header {
+  position: relative;
+  z-index: var(--z-header);
+  background-color: var(--color-surface);
+  border-bottom: var(--border-hairline);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+  height: var(--header-height-mobile);
+  transition: height var(--duration-fast) var(--ease-standard);
+}
+
+.logoLink {
+  display: block;
+  flex: none;
+}
+
+.logo {
+  transition: height var(--duration-fast) var(--ease-standard);
+}
+
+.nav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.navLink,
+.contact {
+  display: inline-block;
+  padding: 6px 0;
+  border: 0;
+  border-bottom: var(--border-width-rule) solid transparent;
+  background: none;
+  color: var(--color-text-strong);
+  font-family: var(--font-sans);
+  font-size: var(--text-nav-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-ui-leading);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.navLink:hover {
+  color: var(--color-text-accent);
+}
+
+/* Current section / open menu: blue-700 text on a 2px blue base line (DS V3). */
+.active {
+  color: var(--color-text-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* "Liên hệ" outlined item; hover fills navy like the secondary button. */
+.contact {
+  padding: 8px var(--space-16);
+  border: var(--border-width-hairline) solid var(--color-border-strong);
+}
+
+.contact:hover,
+.contact[aria-current="page"] {
+  background-color: var(--color-surface-inverse);
+  color: var(--color-text-inverse-strong);
+}
+
+/* ≥ 1024: desktop header, sticky; FD v3 tablet sizes (72px, logo 48, 13.5px, gap 22). */
+@media (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
+
+  .bar {
+    height: var(--header-height-tablet);
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .header[data-compact] .bar {
+    height: var(--header-height-compact);
+  }
+
+  .header[data-compact] .logo {
+    height: var(--logo-height-compact);
+  }
+}
+
+/* ≥ 1280: FD v3 desktop sizes (80px, logo 52, 14px, gap 30). */
+@media (min-width: 1280px) {
+  .bar {
+    height: var(--header-height);
+  }
+
+  .navList {
+    gap: 30px;
+  }
+}

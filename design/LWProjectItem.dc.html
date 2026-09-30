@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:72px;padding:44px 0;border-bottom:1px solid #D9D6CF;align-items:center;font-family:'Public Sans',sans-serif;color:#282058">
+<div style="order:{{ po }}"><dc-import name="LWPhoto" ratio="4/3" label="[ẢNH DỰ ÁN 4:3]" hint-size="100%,340px"></dc-import></div>
+<div style="order:{{ to }};display:flex;flex-direction:column;gap:18px">
+<div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">{{ industry }}</div>
+<div style="font:500 34px/1.15 'Newsreader',serif;letter-spacing:-.01em">{{ title }}</div>
+<div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766;max-width:560px">{{ challenge }}</div>
+<div style="border-top:1px solid #282058">
+<div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 13px 'Public Sans',sans-serif;color:#5A5872">Dịch vụ chính</span><span style="font:400 13px 'IBM Plex Mono',monospace">{{ service }}</span></div>
+<div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 13px 'Public Sans',sans-serif;color:#5A5872">Kết quả chính</span><span style="font:400 13px 'IBM Plex Mono',monospace">{{ result }}</span></div>
+<div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 13px 'Public Sans',sans-serif;color:#5A5872">Địa điểm</span><span style="font:400 13px 'IBM Plex Mono',monospace">{{ location }}</span></div>
+</div>
+<span tabindex="0" style="font:600 15px 'Public Sans',sans-serif;border-bottom:2px solid #F89018;padding-bottom:3px;align-self:flex-start;cursor:pointer" style-hover="color:#0C5F98" style-focus="outline:2px solid #1078BF;outline-offset:4px">Xem dự án →</span>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+<div style="padding:28px 0;border-bottom:1px solid #D9D6CF;display:flex;flex-direction:column;gap:14px;font-family:'Public Sans',sans-serif;color:#282058">
+<dc-import name="LWPhoto" ratio="4/3" label="[ẢNH DỰ ÁN 4:3]" hint-size="100%,260px"></dc-import>
+<div style="font:600 11px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">{{ industry }}</div>
+<div style="font:500 26px/1.15 'Newsreader',serif">{{ title }}</div>
+<div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766">{{ challenge }}</div>
+<div style="border-top:1px solid #282058">
+<div style="display:flex;justify-content:space-between;gap:12px;min-height:44px;align-items:center;border-bottom:1px solid #D9D6CF"><span style="font:600 13px 'Public Sans',sans-serif;color:#5A5872">Dịch vụ chính</span><span style="font:400 12px 'IBM Plex Mono',monospace;text-align:right">{{ service }}</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;min-height:44px;align-items:center;border-bottom:1px solid #D9D6CF"><span style="font:600 13px 'Public Sans',sans-serif;color:#5A5872">Kết quả chính</span><span style="font:400 12px 'IBM Plex Mono',monospace;text-align:right">{{ result }}</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;min-height:44px;align-items:center;border-bottom:1px solid #D9D6CF"><span style="font:600 13px 'Public Sans',sans-serif;color:#5A5872">Địa điểm</span><span style="font:400 12px 'IBM Plex Mono',monospace;text-align:right">{{ location }}</span></div>
+</div>
+<span tabindex="0" style="min-height:48px;display:flex;align-items:center;justify-content:center;border:1px solid #282058;font:600 15px 'Public Sans',sans-serif" style-focus="outline:2px solid #1078BF;outline-offset:2px">Xem dự án →</span>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1248,&quot;height&quot;:520},&quot;industry&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;THÉP &amp; KIM LOẠI&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[CASE DATA] Tên dự án&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;challenge&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[CASE DATA] Thách thức ngắn, 1–2 câu&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;service&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[CASE DATA] Dịch vụ chính&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;result&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[CASE DATA]&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;location&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;[CASE DATA] nếu công khai&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;flip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props, m = !!p.mobile, f = !!p.flip;
+    return {
+      mobile: m, desktop: !m, po: f ? 1 : 0, to: f ? 0 : 1,
+      industry: p.industry ?? 'THÉP & KIM LOẠI',
+      title: p.title ?? '[CASE DATA] Tên dự án',
+      challenge: p.challenge ?? '[CASE DATA] Thách thức ngắn, 1–2 câu',
+      service: p.service ?? '[CASE DATA] Dịch vụ chính',
+      result: p.result ?? '[CASE DATA]',
+      location: p.location ?? '[CASE DATA] nếu công khai'
+    };
+  }
+}
+</script>
+</body>
+</html>

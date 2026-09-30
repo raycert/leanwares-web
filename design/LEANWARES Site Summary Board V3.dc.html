@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#DEDDD9;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<section data-screen-label="Site Summary" style="padding:80px">
+<div id="7a" style="width:1440px;background:#fff;padding:72px 96px;display:flex;flex-direction:column;gap:80px;font-family:'Public Sans',sans-serif;color:#282058">
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:48px"><div style="display:flex;flex-direction:column;gap:14px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">SITE SUMMARY BOARD V3 · ESG + MANAGEMENT SYSTEMS + STANDARDS</div><div style="font:500 56px/1.05 'Newsreader',serif;letter-spacing:-.02em">Public website LEANWARES V1 — Frozen</div></div><div style="font:400 15px/1.65 'Public Sans',sans-serif;color:#4A4766;max-width:520px">Tổng hợp cấu trúc, loại trang, loại nội dung, CTA và luồng chuyển đổi. Chỉ phạm vi website công khai; không gồm công cụ tính toán, cổng khách hàng hay chatbot.</div></div>
+
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:16px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">01 · PUBLIC SITEMAP V1</div>
+<div style="border-top:2px solid #282058"><sc-for list="{{ sitemap }}" as="s" hint-placeholder-count="12"><div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:600 15px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13.5px/1.6 'Public Sans',sans-serif;color:#4A4766">{{ s.v }}</span></div></sc-for></div>
+<div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#5A5872">Menu chính giữ nguyên 7 mục. Tài liệu, Sự kiện nằm trong Kiến thức; không thêm menu cấp 1.</div></div>
+<div style="display:flex;flex-direction:column;gap:16px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">02 · PAGE ARCHETYPES</div>
+<div style="border-top:2px solid #282058"><div style="display:grid;grid-template-columns:76px 190px minmax(0,1fr) 110px;gap:16px;padding:10px 0;border-bottom:1px solid #282058;font:500 11px 'IBM Plex Mono',monospace;color:#5A5872"><span>ID</span><span>ARCHETYPE</span><span>CẤU TRÚC</span><span style="text-align:right">TRẠNG THÁI</span></div>
+<sc-for list="{{ arche }}" as="a" hint-placeholder-count="14"><div style="display:grid;grid-template-columns:76px 190px minmax(0,1fr) 110px;gap:16px;padding:12px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:500 12px 'IBM Plex Mono',monospace;color:#0C5F98">{{ a.id }}</span><span style="font:600 14px 'Public Sans',sans-serif">{{ a.t }}</span><span style="font:400 13px/1.5 'Public Sans',sans-serif;color:#4A4766">{{ a.s }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;text-align:right;color:{{ a.c }}">{{ a.st }}</span></div></sc-for></div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px">
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">03 · CONTENT TYPES</div><div style="border-top:2px solid #282058"><sc-for list="{{ ctypes }}" as="s" hint-placeholder-count="6"><div style="padding:11px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 14px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13px 'Public Sans',sans-serif;color:#4A4766"> · {{ s.v }}</span></div></sc-for></div></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">04 · RESOURCE TYPES</div><div style="border-top:2px solid #282058"><sc-for list="{{ rtypes }}" as="s" hint-placeholder-count="8"><div style="padding:11px 0;border-bottom:1px solid #D9D6CF;display:flex;justify-content:space-between;font:600 14px 'Public Sans',sans-serif"><span>{{ s.k }}</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:#5A5872">{{ s.v }}</span></div></sc-for></div><div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#5A5872">Bộ lọc dùng 6 loại; Báo cáo và Lộ trình hiện chỉ xuất hiện trong “Tất cả”.</div></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">05 · CTA TYPES</div><div style="border-top:2px solid #282058"><sc-for list="{{ ctas }}" as="s" hint-placeholder-count="7"><div style="padding:11px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 14px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13px 'Public Sans',sans-serif;color:#4A4766"> · {{ s.v }}</span></div></sc-for></div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">06 · DOWNLOAD STATES</div><div style="border-top:2px solid #282058"><sc-for list="{{ dstates }}" as="s" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 14px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13.5px/1.6 'Public Sans',sans-serif;color:#4A4766">{{ s.v }}</span></div></sc-for></div></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">07 · CONVERSION PATHS (nguyên tắc UX nội bộ, không hiển thị trên website)</div><div style="border-top:2px solid #282058"><sc-for list="{{ paths }}" as="s" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:90px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 14px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13.5px/1.6 'Public Sans',sans-serif;color:#4A4766">{{ s.v }}</span></div></sc-for></div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">08 · SHARED COMPONENTS</div><div style="border-top:2px solid #282058"><sc-for list="{{ shared }}" as="s" hint-placeholder-count="10"><div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:600 13.5px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13px/1.5 'Public Sans',sans-serif;color:#4A4766">{{ s.v }}</span></div></sc-for></div></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">09 · RESPONSIVE STATES</div><div style="border-top:2px solid #282058"><div style="display:grid;grid-template-columns:110px repeat(3,minmax(0,1fr));gap:12px;padding:10px 0;border-bottom:1px solid #282058;font:500 11px 'IBM Plex Mono',monospace;color:#5A5872"><span></span><span>1440</span><span>1024</span><span>390</span></div>
+<sc-for list="{{ resp }}" as="s" hint-placeholder-count="8"><div style="display:grid;grid-template-columns:110px repeat(3,minmax(0,1fr));gap:12px;padding:11px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:600 13px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 12.5px/1.5 'Public Sans',sans-serif;color:#4A4766">{{ s.a }}</span><span style="font:400 12.5px/1.5 'Public Sans',sans-serif;color:#4A4766">{{ s.b }}</span><span style="font:400 12.5px/1.5 'Public Sans',sans-serif;color:#4A4766">{{ s.c }}</span></div></sc-for></div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:96px">
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">10 · DATA MODEL (GHI CHÚ CHO CMS TƯƠNG LAI, KHÔNG THIẾT KẾ ADMIN)</div><div style="border-top:2px solid #282058"><sc-for list="{{ ents }}" as="s" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #D9D6CF"><span style="font:600 14px 'Public Sans',sans-serif">{{ s.k }}</span><span style="font:400 13.5px/1.6 'Public Sans',sans-serif;color:#4A4766">{{ s.v }}</span></div></sc-for></div></div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#0C5F98">QUAN HỆ</div><div style="border-top:2px solid #282058"><sc-for list="{{ rels }}" as="s" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:1fr 60px 1fr 60px;gap:12px;padding:12px 0;border-bottom:1px solid #D9D6CF;align-items:baseline"><span style="font:600 14px 'Public Sans',sans-serif">{{ s.a }}</span><span style="font:500 12px 'IBM Plex Mono',monospace;color:#0C5F98">↔</span><span style="font:500 14px 'IBM Plex Mono',monospace;color:#0C5F98">Standards</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#5A5872">N : N</span></div></sc-for></div><div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#5A5872">Một standard có thể liên quan nhiều service. Một service có thể dùng nhiều standard. Trang Standard Detail đọc quan hệ ngược để hiển thị Dịch vụ, Tài liệu, Bài viết, Ngành liên quan.</div></div>
+</div>
+<div style="background:#282058;color:#fff;padding:56px 56px;display:flex;flex-direction:column;gap:28px"><div style="display:flex;flex-direction:column;gap:12px"><div style="font:600 12px 'Public Sans',sans-serif;letter-spacing:.12em;color:#D2D0E6">11 · FINAL NOTE</div><div style="font:500 48px/1.05 'Newsreader',serif;letter-spacing:-.02em">PUBLIC WEBSITE DESIGN V1 — FROZEN</div></div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;border-top:1px solid #8B88C0"><sc-for list="{{ freeze }}" as="f" hint-placeholder-count="8"><div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid #4A4380;font:600 16px 'Public Sans',sans-serif"><span>{{ f }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#D2D0E6">LOCKED</span></div></sc-for></div>
+<div style="font:400 14px/1.65 'Public Sans',sans-serif;color:#D2D0E6;max-width:760px">Không tạo thêm page hoặc component mới sau mốc này, trừ khi development phát hiện vấn đề kỹ thuật.</div></div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const ok = '#0C5F98', no = '#A85A00';
+    return {
+      ents: [{ k: 'Service', v: 'LEANWARES cung cấp gì. Ví dụ: Tư vấn xây dựng Hệ thống quản lý năng lượng ISO 50001. Thuộc 1 trong 5 nhóm.' }, { k: 'Standard / Framework', v: 'Tiêu chuẩn hoặc framework tham chiếu. Ví dụ: ISO 50001:2018. Thực thể tri thức, hiển thị ở Thư viện và Standard Detail.' }],
+      rels: ['Service', 'Industry', 'Project', 'Article', 'Resource'].map(a => ({ a })),
+      freeze: ['ESG & Management Systems layers', 'Service ↔ Standard separation', 'Visual direction', 'Design tokens', 'Public sitemap', 'Page archetypes', 'Shared components', 'Growth components', 'Responsive states', 'Accessibility states'],
+      sitemap: [
+        { k: 'Trang chủ', v: 'Hero, thị trường, 3 trụ cột, khung GHG, 8 nhóm giải pháp, ngành, dự án tiêu biểu, Góc nhìn & Tài liệu, CTA.' },
+        { k: 'Giải pháp', v: 'Tổng quan giải pháp (5t) · Nhà máy xanh · Sản phẩm xanh · Chuỗi cung ứng xanh · ESG & Phát triển bền vững (5x) · Hệ thống quản lý & Tiêu chuẩn (5y) · Service Detail. Ba trụ cột là kiến trúc thương hiệu; hai nhóm sau là lớp dịch vụ xuyên suốt, không phải trụ cột thứ tư.' },
+        { k: 'Ngành', v: 'Tổng quan ngành (5u) · Industry Detail (6 ngành: Thép & kim loại, Gỗ & nội thất, Giấy & bao bì, Thực phẩm & nông nghiệp, Sản xuất công nghiệp, Khu công nghiệp).' },
+        { k: 'Dự án', v: 'Project Listing (5v) → Project Detail.' },
+        { k: 'Kiến thức', v: 'Insights + Resources → Article Detail · Resource Library → Resource Detail · Events Listing (5w) → Event Detail · Tiêu chuẩn & Framework (5z) → Standard Detail (5aa).' },
+        { k: 'Về LEANWARES', v: 'Giới thiệu, năng lực theo tiêu chuẩn & framework (không khẳng định chứng nhận), đội ngũ, hành trình.' },
+        { k: 'Liên hệ', v: 'Đăng ký đánh giá sơ bộ → Cảm ơn.' },
+        { k: 'Utility', v: 'Search · Thank-you · 404 · Privacy · Terms · Cookie Policy.' }
+      ],
+      arche: [
+        ['Home', 'Trang chủ', 'Editorial, 9 phần, 3 khung', 1], ['5t', 'Solutions Overview', 'Ba trụ cột nổi bật; năng lực xuyên suốt: ESG và Hệ thống quản lý dạng danh sách đường kẻ; chỉ mục dịch vụ, khung GHG, dự án', 1], ['5a–c', 'Pillar', 'Hero, phạm vi, sơ đồ riêng, khung GHG, dự án', 1],
+        ['5d', 'Service Detail', 'Thông tin nhanh, quy trình, khối Tiêu chuẩn & Framework áp dụng, ví dụ đầu ra, FAQ', 1], ['5u', 'Industries Overview', 'Ảnh lớn + danh sách ngành, insight khi hover / focus, vấn đề thường gặp', 1], ['5e', 'Industry Detail', 'Điểm nóng, yêu cầu, Tiêu chuẩn & yêu cầu thường gặp, giải pháp ưu tiên, dự án', 1],
+        ['5v', 'Projects Listing', 'Dự án nổi bật, lọc ngang, danh sách xen ảnh, bottom sheet mobile', 1], ['5f', 'Project / Case Detail', 'Thách thức → Kết quả, trường Tiêu chuẩn / Framework áp dụng, bảng đường cơ sở / sau / Δ', 1],
+        ['5x', 'ESG Service Group', 'Chiến lược, E · S · G, Dữ liệu & Báo cáo dạng đường kẻ; Standards liên quan; dự án; tài liệu', 1], ['5y', 'Management Systems Service Group', 'Cách đọc Dịch vụ / Tiêu chuẩn; 5 nhóm; bảng dịch vụ · tiêu chuẩn · hình thức', 1], ['5z', 'Standards & Framework Library', 'Lọc nhóm + tìm mã; danh sách theo nhóm kèm dịch vụ liên quan; không bán dịch vụ', 1], ['5aa', 'Standard / Framework Detail', 'Metadata, nội dung tiêu chuẩn, yêu cầu chính, liên kết Dịch vụ · Tài liệu · Bài viết · Ngành', 1], ['5g→5q', 'Insights + Tài liệu', 'Tabs 6, bài xen tài liệu, đăng ký cập nhật', 1],
+        ['5h→5r', 'Article Detail', 'Tài liệu liên quan, Tiêu chuẩn / Framework liên quan, nội dung liên quan, đăng ký', 1], ['5k', 'Resource Library', 'Lọc trái, danh sách, khối nổi bật', 1], ['5l', 'Resource Detail', 'Metadata, đối tượng, xem trước, Tiêu chuẩn / Framework liên quan, form tải 3 trạng thái', 1],
+        ['5w', 'Events Listing', 'Tabs 3, sự kiện nổi bật, sắp diễn ra, đã diễn ra kèm tài liệu', 1], ['5m', 'Event Detail', 'Metadata, agenda, diễn giả, tài liệu sau sự kiện', 1], ['5i', 'About', 'Năng lực nền, ba cách nhìn, đội ngũ, Năng lực theo tiêu chuẩn & framework, hành trình', 1],
+        ['5j', 'Contact', 'Quy trình sau khi gửi + form', 1], ['5n·5o·5p·5s', 'Utility', 'Tìm kiếm, cảm ơn, pháp lý (Privacy, Terms, Cookie), 404', 1]
+      ].map(x => ({ id: x[0], t: x[1], s: x[2], st: 'DONE / FROZEN', c: ok })),
+      ctypes: [{ k: 'Bài viết', v: 'Phân tích, Hướng dẫn, Cập nhật quy định, Kỹ thuật' }, { k: 'Tài liệu', v: '8 loại, tải trực tiếp hoặc qua form' }, { k: 'Sự kiện', v: 'Webinar, đào tạo, chia sẻ' }, { k: 'Dự án', v: 'Thách thức → Kết quả' }, { k: 'Dịch vụ', v: 'Trang giải pháp, 5 nhóm (3 trụ cột + ESG + Hệ thống quản lý)' }, { k: 'Tiêu chuẩn / Framework', v: 'Kiến thức tham chiếu, không bán dịch vụ' }, { k: 'Ngành', v: '6 ngành' }],
+      rtypes: [['Checklist', 'Checklist'], ['Hướng dẫn', 'Guide'], ['Biểu mẫu', 'Template'], ['Công cụ Excel', 'Excel Tool'], ['Whitepaper', 'Whitepaper'], ['Báo cáo / Nghiên cứu', 'Research'], ['Lộ trình', 'Roadmap'], ['Tự đánh giá', 'Assessment']].map(x => ({ k: x[0], v: x[1] })),
+      ctas: [{ k: 'Chính', v: 'Đăng ký đánh giá sơ bộ' }, { k: 'Phụ', v: 'Khám phá giải pháp · Xem dự án' }, { k: 'Tải tài liệu', v: 'Tải tài liệu · Nhận tài liệu' }, { k: 'Đăng ký cập nhật', v: 'Đăng ký nhận cập nhật' }, { k: 'Sự kiện', v: 'Đăng ký tham dự · Nhận tài liệu sự kiện' }, { k: 'Liên hệ', v: 'Liên hệ · Trao đổi với chuyên gia' }, { k: 'Liên kết chữ', v: 'Xem thêm →, gạch chân cam' }],
+      dstates: [{ k: 'Ungated', v: 'Nút “Tải tài liệu”, không form, ghi định dạng và dung lượng.' }, { k: 'Gated', v: '4 trường: họ tên, email công ty, công ty, ngành + đồng ý xử lý dữ liệu. Không hỏi số điện thoại.' }, { k: 'Success', v: 'Cảm ơn bạn → Tải xuống · Xem bài viết liên quan · tùy chọn nhận cập nhật. Không popup.' }],
+      paths: [{ k: 'Đường 1', v: 'Google / LinkedIn → Bài viết → Tài liệu → Form tải → Cảm ơn → Đánh giá sơ bộ.' }, { k: 'Đường 2', v: 'Sự kiện → Tài liệu sau sự kiện → Đăng ký cập nhật → Dịch vụ.' }, { k: 'Đường 3', v: 'Trụ cột → Dịch vụ → Dự án → Liên hệ.' }, { k: 'Đường 4', v: 'Tìm kiếm → Tài liệu / Bài viết → Nội dung liên quan → Dịch vụ → Dự án.' }],
+      shared: [
+        ['Header · Footer · CTA Band', 'Mọi trang; header có mega menu và menu mobile'], ['Photo placeholder', 'Tỷ lệ theo bảng ratio V1'], ['Resource List Item', 'Thư viện, Kiến thức, Bài viết, Sự kiện, Tìm kiếm'],
+        ['Gated Download Form', 'Chi tiết tài liệu, bảng trạng thái'], ['Subscription Form', 'Kiến thức, Thư viện, Bài viết'], ['Related Content', '6 loại: Dịch vụ, Tiêu chuẩn (mono xanh), Tài liệu, Bài viết, Ngành, Dự án'], ['Standards Block', 'Service, Industry, Project, Resource / Article; 4 biến thể'],
+        ['Credentials Metrics + Logo Strip', 'Có thể đặt ở trang chủ, About, Dịch vụ'], ['Search Bar + Results', 'Tìm kiếm, 404, overlay'], ['Project Item · Industry Item · Event Item', '5v · 5u · 5w; cùng ngôn ngữ đường kẻ, mono, không card'], ['Metric · Table · Timeline · FAQ', 'Từ Design System V1']
+      ].map(x => ({ k: x[0], v: x[1] })),
+      resp: [
+        ['Điều hướng', 'Mega menu 4 cột (cột 4: ESG & Hệ thống quản lý)', 'Mega menu, nav rút gọn', 'Menu toàn màn hình'], ['Bộ lọc tài liệu', 'Cột trái', 'Cột trái hẹp', 'Nút Bộ lọc → bottom sheet'], ['Form tải', 'Cột phải, dính', 'Dưới hero', 'Sau metadata, nút dính đáy'],
+        ['Tìm kiếm', 'Trang / overlay', 'Trang', 'Toàn màn hình'], ['Danh sách', 'Hàng 3 cột', 'Hàng 3 cột', 'Xếp dọc, CTA 44px'], ['Bảng số liệu', '4 cột', '4 cột', 'Khối chỉ số dọc'],
+        ['Vùng chạm', '≥ 44px', '≥ 44px', '≥ 48px'], ['5x · 5y · 5z · 5aa', 'Nhóm 2 cột, bảng 3 cột', 'Như 1440', 'Danh sách dọc, mã tiêu chuẩn mono'], ['Ngành (5u)', 'Ảnh + list, hover / focus', 'Ảnh + list', 'Accordion, mở 1 mục'], ['Dự án (5v)', 'Lọc ngang, ảnh xen kẽ', 'Ảnh xen kẽ', 'Bộ lọc → bottom sheet, xếp dọc'], ['Sự kiện (5w)', 'Hàng 4 cột, khối ngày', 'Hàng 4 cột', 'Khối ngày gọn, CTA ≥ 48px'], ['Ảnh', 'Theo bảng ratio', 'Thu nhỏ', 'Thấp hơn, ưu tiên 4:3']
+      ].map(x => ({ k: x[0], a: x[1], b: x[2], c: x[3] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

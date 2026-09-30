@@ -1,0 +1,144 @@
+/* Mobile (5t 390) */
+.section {
+  padding-bottom: 56px;
+}
+
+.eyebrow {
+  padding-bottom: var(--space-12);
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: 28px 0 36px;
+  border-top: var(--border-rule);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--text-data-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-accent);
+}
+
+.scope {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) 22px;
+  color: var(--color-text-strong);
+  font-size: var(--text-small-size);
+  font-weight: var(--font-weight-medium);
+}
+
+.capabilitiesLabel {
+  padding-bottom: 10px;
+}
+
+.capabilityList {
+  border-top: var(--border-rule-thin);
+}
+
+.capabilityList li {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target-min);
+  border-bottom: var(--border-hairline);
+  color: var(--color-text-strong);
+  font-size: var(--text-link-size);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Tablet (no 5t tablet board): photo | text, capabilities full width below. */
+@media (min-width: 768px) {
+  .section {
+    padding-bottom: var(--section-space);
+  }
+
+  .eyebrow {
+    padding-bottom: var(--space-16);
+  }
+
+  .list {
+    border-top: var(--border-rule);
+  }
+
+  .pillar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 40px;
+    padding: 48px 0;
+    border-top: 0;
+    border-bottom: var(--border-hairline);
+  }
+
+  .text {
+    gap: 20px;
+  }
+
+  .number {
+    font-size: var(--text-label-size);
+  }
+
+  .capabilities {
+    grid-column: 1 / -1;
+  }
+
+  .capabilityList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+  }
+
+  .capabilityList li {
+    min-height: 52px;
+    font-size: var(--text-body-size);
+  }
+}
+
+/* Desktop (5t 1440): 4 / 4 / 4; the middle pillar swaps photo and capabilities. */
+@media (min-width: 1280px) {
+  .pillar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 56px;
+    padding: 56px 0;
+  }
+
+  .capabilities {
+    grid-column: auto;
+    order: 2;
+  }
+
+  .text {
+    order: 1;
+  }
+
+  .photo {
+    order: 0;
+  }
+
+  .reversed .photo {
+    order: 2;
+  }
+
+  .reversed .capabilities {
+    order: 0;
+  }
+
+  .capabilityList {
+    display: block;
+  }
+}

@@ -1,0 +1,16 @@
+.wrap {
+  padding-block: var(--space-24) var(--space-48);
+}
+
+.text {
+  max-width: var(--measure-prose);
+  padding-top: var(--space-16);
+  border-top: var(--border-rule);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    padding-block: var(--space-48) var(--block-space);
+  }
+}

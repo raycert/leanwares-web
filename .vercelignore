@@ -1,0 +1,6 @@
+# Not needed to build or serve the site; kept out of the upload.
+design/
+docs/
+*.tsbuildinfo
+.env*
+!.env.example

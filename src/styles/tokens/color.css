@@ -1,0 +1,92 @@
+/*
+ * Colour tokens. Source: Design System V3 Final (core) + extended colours found in the
+ * approved boards (named in docs/DESIGN_HANDOFF.md §C1).
+ *
+ * Layer 1 (--palette-*) is the ONLY place raw hex values may appear in the codebase.
+ * Components must use layer 2 (--color-*) or the contextual --surface-* tokens.
+ */
+
+:root {
+  /* ---- Layer 1: palette -------------------------------------------------- */
+  --palette-white: #ffffff;
+
+  /* Blue (logo) */
+  --palette-blue-500: #1078bf;
+  --palette-blue-700: #0c5f98;
+
+  /* Navy (logo) and tints used on navy surfaces */
+  --palette-navy-100: #e7e5f5;
+  --palette-navy-200: #d2d0e6;
+  --palette-navy-300: #b9b5dc;
+  --palette-navy-400: #8b88c0; /* merges #8C87C2 (C19) */
+  --palette-navy-700: #4a4380;
+  --palette-navy-750: #3b3378;
+  --palette-navy-800: #30286a;
+  --palette-navy-900: #282058;
+
+  /* Orange (logo): marker only */
+  --palette-orange-500: #f89018;
+
+  /* Warm stone neutrals */
+  --palette-stone-50: #f6f5f2;
+  --palette-stone-100: #eceae4;
+  --palette-stone-200: #e6e3dc;
+  --palette-stone-300: #d9d6cf; /* merges #DAD7CF placeholder stripe */
+
+  /* Ink (text greys with a navy cast) */
+  --palette-ink-400: #8b88a6;
+  --palette-ink-500: #6e6c86;
+  --palette-ink-600: #5a5872;
+  --palette-ink-700: #4a4766;
+
+  /* ---- Layer 2: semantic ------------------------------------------------- */
+
+  /* Surfaces */
+  --color-surface: var(--palette-white);
+  --color-surface-subtle: var(--palette-stone-50);
+  --color-surface-inverse: var(--palette-navy-900);
+  --color-surface-accent: var(--palette-blue-500);
+  --color-surface-disabled: var(--palette-stone-300);
+  --color-surface-placeholder: var(--palette-stone-100);
+  --color-surface-placeholder-inverse: var(--palette-navy-800);
+  --color-placeholder-stripe: var(--palette-stone-300);
+  --color-placeholder-stripe-inverse: var(--palette-navy-750);
+
+  /* Text on light surfaces */
+  --color-text-strong: var(--palette-navy-900); /* headings, titles */
+  --color-text: var(--palette-ink-700); /* body, 8.8:1 on white */
+  --color-text-muted: var(--palette-ink-600); /* captions, secondary labels */
+  --color-text-subtle: var(--palette-ink-500); /* input placeholder */
+  --color-text-disabled: var(--palette-ink-500);
+  --color-text-accent: var(--palette-blue-700); /* eyebrows, blue text, 6.8:1 */
+  --color-text-link: var(--palette-blue-700);
+  --color-text-link-hover: var(--palette-navy-900);
+  --color-text-on-accent: var(--palette-white);
+
+  /* Text on navy surfaces */
+  --color-text-inverse-strong: var(--palette-white);
+  --color-text-inverse-high: var(--palette-navy-100);
+  --color-text-inverse: var(--palette-navy-200);
+  --color-text-inverse-muted: var(--palette-navy-300);
+
+  /* Borders */
+  --color-border: var(--palette-stone-300); /* hairline */
+  --color-border-soft: var(--palette-stone-200); /* menu / filter rows */
+  --color-border-strong: var(--palette-navy-900); /* section rules, outlines */
+  --color-border-input: var(--palette-ink-400);
+  --color-border-disabled: var(--palette-navy-300);
+  --color-border-inverse: var(--palette-navy-700); /* hairline on navy */
+  --color-border-inverse-strong: var(--palette-navy-400); /* rule on navy */
+
+  /* Accent & marker */
+  --color-accent: var(--palette-blue-500);
+  --color-accent-hover: var(--palette-blue-700);
+  --color-marker: var(--palette-orange-500); /* never small text on light surfaces */
+
+  /* Focus */
+  --color-focus: var(--palette-blue-500);
+  --color-focus-inverse: var(--palette-white);
+
+  /* Feedback: errors use text + a 4px marker bar, never colour alone */
+  --color-feedback-error-bar: var(--palette-orange-500);
+}

@@ -1,0 +1,43 @@
+/* Internal fixture banner: never rendered for published records. */
+.notice {
+  margin-top: var(--space-16);
+  padding: var(--space-12) var(--space-16);
+  border-left: var(--border-error);
+  background-color: var(--color-surface-subtle);
+  color: var(--color-text-strong);
+}
+
+/* 5f: text + 3:2 photo side by side on desktop; photo hidden on mobile (5f 390) */
+.challenge {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.challengeImage {
+  display: none;
+}
+
+.lessons {
+  border-top: var(--border-rule);
+}
+
+.lessons li {
+  padding-block: var(--space-16);
+  border-bottom: var(--border-hairline);
+}
+
+@media (min-width: 768px) {
+  .challengeImage {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  .challenge {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-48);
+  }
+}
